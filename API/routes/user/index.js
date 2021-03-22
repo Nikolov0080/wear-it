@@ -19,7 +19,6 @@ router.post('/login', (req, res) => {
 console.log(req.body);
 res.send(req.body)
 
-
 });
 
 router.post('/register', (req, res) => {
