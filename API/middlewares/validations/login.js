@@ -7,6 +7,10 @@ module.exports = checking = (req, res, next) => {
         .isLength({ min: 6, max: 16 });
 
     const errors = req.validationErrors();
-    console.log(errors)
-    next()
+    if (errors === false) {
+        next();
+    } else {
+        req.body.errors = errors;
+        next();
+    }
 }

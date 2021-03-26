@@ -10,10 +10,14 @@
 </head>
 
 <body>
-{{!-- set errors --}}
+    {{!-- set errors --}}
     <main>
         <div class="form">
-        <h1>Login Form</h1>
+            <h1>Login Form</h1>
+            {{#each errors}}
+            <span class="error">{{msg}}</span>
+            <br />
+            {{/each}}
             <form action="/user/login" method="POST">
                 <label for="username">Username</label>
                 <br />

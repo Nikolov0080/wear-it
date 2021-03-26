@@ -2,6 +2,10 @@
   <link rel="stylesheet" href="/css/register.css">
   <div class="form">
   <h1>Register Form</h1>
+      {{#each errors}}
+      <span class="error">{{msg}}</span>
+      <br/>
+      {{/each}}
     <form action="/user/register" method="POST">
       <label for="username">Username</label>
       <br/>
@@ -14,13 +18,10 @@
       <input type="password" id="password" name="password">
       <br/>
 
-      {{!-- {{#each errors}}
-      <span class="error">{{msg}}</span>
-      {{/each}} --}}
-      <label for="repeatPassword">Re-Password</label>
+      <label for="rePassword">Re-Password</label>
       <br/>
 
-      <input type="password" id="repeatPassword" name="repeatPassword">
+      <input type="password" id="rePassword" name="rePassword">
       <br/>
 
       <label for="email">Email</label>

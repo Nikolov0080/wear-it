@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { registerGET } = require('../../controllers/user/GET/register');
+const { loginGET } = require('../../controllers/user/GET/login');
 const { register } = require('../../controllers/user/POST/register');
 const { login } = require('../../controllers/user/POST/login');
 const loginValidation = require('../../middlewares/validations/login');
@@ -19,9 +20,7 @@ router.get('/completed-orders', (req, res) => {
     res.send("orders test get");
 });
 
-router.get('/login', (req, res) => {
-    res.render('login')
-});
+router.get('/login', loginGET);
 
 router.get('/register', registerGET)
 
