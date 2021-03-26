@@ -1,6 +1,5 @@
 const express = require("express");
-const  error  = require("./middlewares/error");
-
+const error = require("./middlewares/error");
 const config = require('./config');
 const userRoutes = require('./routes/user/index');
 const productsRoutes = require('./routes/products/index');
@@ -10,6 +9,7 @@ const app = express();
 
 require('./config/express')(app);
 require('./config/mongoose')(app);
+
 
 app.use('/', home)
 app.use('/user/', userRoutes);

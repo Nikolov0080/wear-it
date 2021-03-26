@@ -3,6 +3,9 @@ const router = express.Router();
 const { registerGET } = require('../../controllers/user/GET/register');
 const { register } = require('../../controllers/user/POST/register');
 const { login } = require('../../controllers/user/POST/login');
+const loginValidation = require('../../middlewares/validations/login');
+const registerValidation = require('../../middlewares/validations/register');
+
 
 router.get('/profile', (req, res) => {
     res.send('test profile get');
@@ -22,9 +25,9 @@ router.get('/login', (req, res) => {
 
 router.get('/register', registerGET)
 
-router.post('/login', login);
+router.post('/login', loginValidation, login);
 
-router.post('/register', register);
+router.post('/register', registerValidation, register);
 
 
 module.exports = router;

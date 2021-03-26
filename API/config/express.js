@@ -1,18 +1,19 @@
 const express = require('express');
 var exphbs = require('express-handlebars');
-const cookieParser = require('cookie-parser');
 var path = require('path');
+const cookieParser = require('cookie-parser');
+const expressValidator = require('express-validator');
+
 // add auth 
 
 const start = (app) => {
     app.engine('.hbs', exphbs({ extname: '.hbs' }));
-
-    // app.set('views', path.join( __dirname , 'views'));
-
+    console.log(path.join(__dirname, '../public'))
     app.set('view engine', 'hbs');
 
-    app.use(express.static('public'));
-
+    const staticPath = path.join(__dirname, '../public')
+    app.use(express.static(staticPath))
+    app.use(expressValidator())
     app.use(express.urlencoded({
         extended: true
     }));

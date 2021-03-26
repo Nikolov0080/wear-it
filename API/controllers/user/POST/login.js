@@ -14,7 +14,6 @@ module.exports.login = (req, res) => {
     // else send error response !
 
 
-
     res.send("OK");
 
 }
