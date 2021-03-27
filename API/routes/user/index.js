@@ -8,10 +8,6 @@ const loginValidation = require('../../middlewares/validations/login');
 const registerValidation = require('../../middlewares/validations/register');
 
 
-router.get('/profile', (req, res) => {
-    res.send('test profile get');
-});
-
 router.get('/orders', (req, res) => {
     res.send("orders test get");
 });
@@ -19,6 +15,11 @@ router.get('/orders', (req, res) => {
 router.get('/completed-orders', (req, res) => {
     res.send("orders test get");
 });
+
+router.get('/profile', (req, res) => {
+    res.send('test profile get');
+});
+
 
 router.get('/login', loginGET);
 

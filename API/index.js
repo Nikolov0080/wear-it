@@ -10,7 +10,6 @@ const app = express();
 require('./config/express')(app);
 require('./config/mongoose')(app);
 
-
 app.use('/', home)
 app.use('/user/', userRoutes);
 app.use('/products/', productsRoutes);

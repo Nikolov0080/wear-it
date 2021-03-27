@@ -1,11 +1,23 @@
-const jwt = require('../auth/JWT/index')
+const jwt = require('../JWT/index');
+const { COOKIE_NAME, SECRET } = require('../config/index')
 
-module.exports.auth = (req, res, next) => {
+module.exports = function () {
+    return (req, res, next) => {
 
-    if (req.cookies){
-        console.log(jwt.decodeTokenL(req.cookies.auth))
-        // finish auth middleware !!!
+        let token = req.cookies[COOKIE_NAME];
+        const headers = req.headers;
+
+        // fix for headers after
+
+        if (token) {
+            const decoded = jwt.decodeToken(token);
+
+            req.user = decoded;
+            res.locals.user = decoded;
+            res.locals.isAuthenticated = true;
+        }
+
+        next();
+
     }
-
-        next()
 }

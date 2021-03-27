@@ -3,7 +3,7 @@ var exphbs = require('express-handlebars');
 var path = require('path');
 const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
-
+const auth = require('../middlewares/auth');
 // add auth 
 
 const start = (app) => {
@@ -19,7 +19,7 @@ const start = (app) => {
     }));
 
     app.use(cookieParser());
-
+    app.use(auth());
 }
 
 module.exports = start;

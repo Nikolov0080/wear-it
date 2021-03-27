@@ -1,5 +1,6 @@
 const { userSchema } = require('../../../models/user');
-const jwt = require('../../../auth/JWT/index');
+const jwt = require('../../../JWT/index');
+const { COOKIE_NAME } = require('../../../config/index');
 
 module.exports.register = (req, res) => {
     const { username, email, password, rePassword } = req.body;
@@ -12,8 +13,8 @@ module.exports.register = (req, res) => {
     } else {
 
         userSchema.create({ username, email, password }).then(resp => {
-            const token = jwt.createToken({ uid: resp._id });
-            res.cookie('auth', token, { expires: new Date(Date.now() + 900000), httpOnly: true })
+            const token = jwt.createToken({  user: resp });
+            res.cookie(COOKIE_NAME, token, { expires: new Date(Date.now() + 900000), httpOnly: true })
             res.redirect('/');
         }).catch(e => {
             console.log(e);

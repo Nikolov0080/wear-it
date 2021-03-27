@@ -1,6 +1,7 @@
 const { userSchema } = require('../../../models/user');
 const bcrypt = require('bcrypt');
-const jwt = require('../../../auth/JWT/index');
+const jwt = require('../../../JWT/index');
+const { COOKIE_NAME } = require('../../../config/index');
 
 module.exports.login = (req, res) => {
 
@@ -19,8 +20,8 @@ module.exports.login = (req, res) => {
                 if (result) {
 
                     console.log(resp)
-                    const token = jwt.createToken({ uid: resp });
-                    res.cookie('auth', token, { expires: new Date(Date.now() + 900000), httpOnly: true })
+                    const token = jwt.createToken({ user: resp });
+                    res.cookie(COOKIE_NAME, token, { expires: new Date(Date.now() + 900000), httpOnly: true })
                     res.redirect('/');
                 }
             })
