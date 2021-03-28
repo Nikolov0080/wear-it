@@ -16,15 +16,20 @@ module.exports.login = (req, res) => {
     } else {
 
         userSchema.findOne({ username }).then(resp => {
-            bcrypt.compare(password, resp.password).then((result) => {
-                if (result) {
+            if (resp) {
+                bcrypt.compare(password, resp.password).then((result) => {
+                    if (result) {
 
-                    console.log(resp)
-                    const token = jwt.createToken({ user: resp });
-                    res.cookie(COOKIE_NAME, token, { expires: new Date(Date.now() + 72 * 3600000), httpOnly: true })
-                    res.redirect('/');
-                }
-            })
+                        console.log(resp)
+                        const token = jwt.createToken({ user: resp });
+                        res.cookie(COOKIE_NAME, token, { expires: new Date(Date.now() + 72 * 3600000), httpOnly: true })
+                        res.redirect('/');
+                    }
+                })
+            }else{
+                res.send('no user found');
+            }
+
         })
     }
 }

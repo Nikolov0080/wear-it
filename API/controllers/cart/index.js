@@ -16,6 +16,7 @@ module.exports.cartGET = (req, res) => {
 
 }
 
-module.exports.cartPOST = (req, res) => {
-  res.send('cart details for now POST');
+module.exports.cartDELETE = (req, res) => {
+  // need order ID for deletion
+  res.send('cart DELETE request');
 }
