@@ -6,7 +6,7 @@ const { register } = require('../../controllers/user/POST/register');
 const { login } = require('../../controllers/user/POST/login');
 const loginValidation = require('../../middlewares/validations/login');
 const registerValidation = require('../../middlewares/validations/register');
-
+const isGuest = require('../../middlewares/isGuest')
 
 router.get('/orders', (req, res) => {
     res.send("orders test get");
@@ -21,13 +21,13 @@ router.get('/profile', (req, res) => {
 });
 
 
-router.get('/login', loginGET);
+router.get('/login', isGuest, loginGET);
 
-router.get('/register', registerGET)
+router.get('/register', isGuest, registerGET)
 
-router.post('/login', loginValidation, login);
+router.post('/login', isGuest, loginValidation, login);
 
-router.post('/register', registerValidation, register);
+router.post('/register', isGuest, registerValidation, register);
 
 
 module.exports = router;

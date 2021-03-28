@@ -21,7 +21,7 @@ module.exports.login = (req, res) => {
 
                     console.log(resp)
                     const token = jwt.createToken({ user: resp });
-                    res.cookie(COOKIE_NAME, token, { expires: new Date(Date.now() + 900000), httpOnly: true })
+                    res.cookie(COOKIE_NAME, token, { expires: new Date(Date.now() + 72 * 3600000), httpOnly: true })
                     res.redirect('/');
                 }
             })

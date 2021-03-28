@@ -14,7 +14,7 @@ module.exports.register = (req, res) => {
 
         userSchema.create({ username, email, password }).then(resp => {
             const token = jwt.createToken({  user: resp });
-            res.cookie(COOKIE_NAME, token, { expires: new Date(Date.now() + 900000), httpOnly: true })
+            res.cookie(COOKIE_NAME, token, { expires: new Date(Date.now() +  72 * 3600000), httpOnly: true })
             res.redirect('/');
         }).catch(e => {
             console.log(e);
