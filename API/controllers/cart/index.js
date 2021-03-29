@@ -12,7 +12,9 @@ module.exports.cartGET = (req, res) => {
 
   getCartItems(userId).then((currentCart) => {
     return res.send(currentCart);
-  })
+  }).catch((e) => {
+    return resp.send(e);
+  });
 
 }
 
