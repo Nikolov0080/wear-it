@@ -3,7 +3,7 @@ const { cartSchema } = require('../../models/cart');
 
 module.exports.makeOrderGET = (req, res) => {
 
-    res.render('make-order')
+    res.render('make-order');
 }
 
 module.exports.makeOrderPOST = (req, res) => {

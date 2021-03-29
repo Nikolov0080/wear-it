@@ -19,5 +19,4 @@ router.get('/make-order', isLogged, makeOrderGET)
 router.get('/add-to-cart', isLogged, addToCartGET)
     .post('/add-to-cart', isLogged, cartValidations, addToCartPOST);
 
-
 module.exports = router;

@@ -17,6 +17,12 @@ module.exports.cartGET = (req, res) => {
 }
 
 module.exports.cartDELETE = (req, res) => {
-  // need order ID for deletion
-  res.send('cart DELETE request');
+  const userId = req.user.user._id;
+
+  cartSchema.deleteMany({ userId }).then((resp) => {
+    res.send(resp);
+  }).catch((e) => {
+    res.send(e);
+  })
+
 }
