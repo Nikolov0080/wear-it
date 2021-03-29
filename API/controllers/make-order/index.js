@@ -29,11 +29,29 @@ module.exports.makeOrderPOST = (req, res) => {
             return e;
         })
     } else {
-// finish this callback hell!!!
-        getUserCart(userId).then((resp)=>{
-            return resp
-        }).then((console.log))
+        // finish this callback hell!!!
+        getUserCart(userId)
+            .then((resp) => {// getting items from the cart
+                return resp
+            }).then((userOrders) => {// adding items from cart to completed orders
+                return completeOrders(userOrders).then((re) => {
+                    return re;
+                })
+            }).then(() => {// deleting items from cart
+                deleteFromCart(userId).then((resp) => {// finishing up!
+                    return res.send(resp);
+                })
+            }).catch((e) => {
+                return res.send(e);
+            })
     }
+}
+
+function completeOrders(orders) {
+    return completedOrdersSchema.insertMany(orders)
+        .then((resp) => {
+            return resp;
+        })
 }
 
 function getUserCart(userId) {

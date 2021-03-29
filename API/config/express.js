@@ -8,7 +8,6 @@ const auth = require('../middlewares/auth');
 
 const start = (app) => {
     app.engine('.hbs', exphbs({ extname: '.hbs' }));
-    console.log(path.join(__dirname, '../public'))
     app.set('view engine', 'hbs');
 
     const staticPath = path.join(__dirname, '../public')
