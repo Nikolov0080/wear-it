@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import PageRouter from './PageRouter';
 import reportWebVitals from './reportWebVitals';
+import ContextConsumer from './context/ContextConsumer';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ContextConsumer>
+      <PageRouter />
+    </ContextConsumer>
   </React.StrictMode>,
   document.getElementById('root')
 );
