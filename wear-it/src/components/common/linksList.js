@@ -1,12 +1,10 @@
 export default function linksList(isAuth) {
     if (isAuth) {
         return [
-
             {
                 name: 'Profile',
                 path: '/'
             },
-
         ]
     }
 

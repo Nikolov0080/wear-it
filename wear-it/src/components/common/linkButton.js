@@ -4,10 +4,8 @@ import style from '../../styles/linkButton.module.css';
 
 const LinkButton = ({ name, path }) => {
 
-
-
     return (
-        <div className={style.navBox}>
+        <div >
 
             <Link className={style.linkBtn} to={path} >{name}</Link>
 
