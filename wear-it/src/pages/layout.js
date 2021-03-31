@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
+import NavBar from '../components/common/navBar';
 
 export class Layout extends Component {
 
     render() {
         return (
             <div>
-                
+                {/* add auth results to navbar */}
+                <NavBar />
                 {this.props.children}
 
                 {/*  NAV HERE */}
