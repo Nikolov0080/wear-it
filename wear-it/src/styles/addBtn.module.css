@@ -1,0 +1,18 @@
+.add {
+    width: 90%;
+    cursor: pointer;
+    background-color: rgb(91, 200, 236);
+    text-align: center;
+    font-family: sans-serif;
+    height: 25px;
+    outline: 0;
+    font-size: large;
+    color: white;
+    padding: 5%;
+    transition: 0.6s;
+    transition-timing-function: ease-in-out;
+}
+
+.add:hover {
+    font-size: 20px;
+}

@@ -10,11 +10,11 @@
 }
 
 .linkBtn:hover {
-    font-size: 30px;
+    font-size: 27px;
 }
 
 .navBox {
-    background-color: lightblue;
+    background-color: rgb(91, 200, 236);
     height: 45px;
     display: inline-flex;
     width: 100%;

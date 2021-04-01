@@ -9,7 +9,6 @@ export class Layout extends Component {
                 {/* add auth results to navbar */}
                 <NavBar />
                 {this.props.children}
-
                 {/*  NAV HERE */}
             </div>
         )
