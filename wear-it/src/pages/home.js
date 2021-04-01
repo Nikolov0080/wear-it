@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
-import SingleProduct from '../components/products/singleProduct';
-
+import HomeMenu from '../components/products/homeMenu';
+import style from '../styles/homePage.module.css';
+import ProductsList from '../components/products/productsList';
 
 export class Home extends Component {
 
     render() {
         return (
             <div>
-                <SingleProduct />
+                <div className={style.row}>
+
+                    <div className={style.col1}>
+                        <HomeMenu />
+                    </div>
+                    <div className={style.col2}>
+                        <ProductsList />
+                    </div>
+                </div>
+
+
             </div>
         )
     }

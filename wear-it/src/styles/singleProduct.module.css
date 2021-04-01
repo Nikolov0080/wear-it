@@ -1,8 +1,6 @@
 .card {
-    margin: 100px;
     box-shadow: 0px 7px 10px 1px lightgrey;
-    width: fit-content;
-   
+    /* width: fit-content; */
 }
 
 .image {

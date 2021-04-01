@@ -5,13 +5,14 @@ export class UserContext extends Component {
 
     state = {
         user: null,
-        cart: null
+        cart: null,
+        currentCategory: null
     }
 
     login = (userData) => {
         this.setState({
             user: userData,
-        })
+        });
 
     }
 
@@ -19,7 +20,13 @@ export class UserContext extends Component {
         this.setState({
             user: null,
             cart: null
-        })
+        });
+    }
+
+    setCategory = (category) => {
+        this.setState({
+            currentCategory: category,
+        });
     }
 
     render() {
@@ -29,9 +36,10 @@ export class UserContext extends Component {
                 value={{
                     user: this.state.user,
                     cart: this.state.cart,
+                    currentCategory: this.state.currentCategory,
                     login: this.login,
-                    logOut: this.logOut
-
+                    logOut: this.logOut,
+                    setCategory: this.setCategory
                 }}
             >
                 { this.props.children}
