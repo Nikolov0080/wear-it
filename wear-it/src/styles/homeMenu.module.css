@@ -1,7 +1,11 @@
 .active {
-    
+    color: red;
 }
 
 .inactive {
+color: royalblue;
+}
 
+.active , .inactive{
+    cursor: pointer;
 }
