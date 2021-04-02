@@ -13,7 +13,7 @@ const ProductsList = () => {
     useEffect(() => {
 
         if (!currentCategory) {
-            setCurrentProducts(allProductsJSON.slice(5, 12))
+            setCurrentProducts(allProductsJSON.slice(7, 17))
         }
     }, [currentCategory])
 
