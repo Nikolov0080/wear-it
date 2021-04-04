@@ -7,15 +7,25 @@ import style from "./css/productsList.module.css";
 const ProductsList = () => {
 
     const [currentProducts, setCurrentProducts] = useState([]);
-
     const context = useContext(Context);
-    const currentCategory = context.currentCategory;
+
     useEffect(() => {
 
-        if (!currentCategory) {
+        if (!context.currentCategory) {
             setCurrentProducts(allProductsJSON.slice(7, 17))
+        } else {
+
+            setCurrentProducts(
+                allProductsJSON.reduce((acc, cVal) => {
+                    if (cVal.type === context.currentCategory) {
+                        acc.push(cVal);
+                    }
+                    return acc;
+                }, [])
+            );
         }
-    }, [currentCategory])
+
+    }, [context.currentCategory]);
 
     return (
         <div className={style.box}>

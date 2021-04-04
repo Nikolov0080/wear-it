@@ -1,35 +1,29 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Context from '../../context/Context';
-import style from './css/homeMenu.module.css';
+import MenuItem from './menuItem';
 
-const HomeMenu = () => {
-    // continue this with useReducer hook!!!
+const HomeMenu = ({ currentCategory }) => {
+  
     const context = useContext(Context);
 
-    const [categories, setCategories] = useState([
+    const categories = [
         { type: 'Hats', view: "inactive" },
         { type: 'Jeans', view: "inactive" },
         { type: 'Shirts', view: "inactive" },
         { type: 'Jackets', view: "inactive" }
-    ]);
+    ];
 
-    useEffect(() => {
-
-    }, [])
-
-    const changeStyle = () => {
-        context.currentCategory = 'test'
+    const changeStyle = (index, type) => {
+        context.setCategory(type);
     }
-
-    console.log(context.currentCategory)
-
 
     return (
         <div>
             <div>
-                {categories.map(({ type, view }, index) => {
 
-                    return <div onClick={() => changeStyle(index)} key={index} >{type}</div>
+                {categories.map(({ type }, index) => {
+                    const className = type === context.currentCategory ? 'active' : 'inactive';
+                    return <MenuItem key={index} className={className} index={index} type={type} foo={changeStyle} />
                 })}
             </div>
         </div>
