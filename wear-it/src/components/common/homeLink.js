@@ -1,6 +1,6 @@
 import React from 'react'
 import LinkButton from './linkButton'
-import style from '../../styles/homeLink.module.css';
+import style from './css/homeLink.module.css';
 
 const HomeLink = () => {
     return (

@@ -1,0 +1,7 @@
+
+.navBox {
+    background-color: rgb(91, 200, 236);
+    height: 45px;
+    display: inline-flex;
+    width: 100%;
+}

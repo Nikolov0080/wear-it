@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '../../styles/addBtn.module.css';
+import style from './css/addBtn.module.css';
 
 const AddBtn = () => {
     return (

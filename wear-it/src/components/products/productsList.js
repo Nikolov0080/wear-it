@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Context from '../../context/Context';
 import SingleProduct from './singleProduct';
 import allProductsJSON from './allProductsJSON';
-import style from "../../styles/productsList.module.css";
+import style from "./css/productsList.module.css";
 
 const ProductsList = () => {
 

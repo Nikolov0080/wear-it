@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Context from '../../context/Context';
-import style from '../../styles/homeMenu.module.css';
+import style from './css/homeMenu.module.css';
 
 const HomeMenu = () => {
     // continue this with useReducer hook!!!
@@ -13,27 +13,23 @@ const HomeMenu = () => {
         { type: 'Jackets', view: "inactive" }
     ]);
 
-    const changeStyle = (index) => {
+    useEffect(() => {
 
-        categories.map((cat, i) => {
-            if (i === index) {
-                cat.view = "active";
-            } else {
-                cat.view = "inactive";
-            }
-            return categories;
-        })
+    }, [])
 
-        console.log(categories)
-        setCategories(categories)
-
+    const changeStyle = () => {
+        context.currentCategory = 'test'
     }
+
+    console.log(context.currentCategory)
+
 
     return (
         <div>
             <div>
                 {categories.map(({ type, view }, index) => {
-                    return <div className={style[view]} onClick={() => changeStyle(index)} key={index} >{type}</div>
+
+                    return <div onClick={() => changeStyle(index)} key={index} >{type}</div>
                 })}
             </div>
         </div>

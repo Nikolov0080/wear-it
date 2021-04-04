@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HomeMenu from '../components/products/homeMenu';
-import style from '../styles/homePage.module.css';
+import style from './css/homePage.module.css';
 import ProductsList from '../components/products/productsList';
 
 export class Home extends Component {

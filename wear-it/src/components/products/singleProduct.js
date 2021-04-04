@@ -1,6 +1,6 @@
 import React from 'react'
 import AddBtn from './addBtn';
-import style from '../../styles/singleProduct.module.css';
+import style from './css/singleProduct.module.css';
 
 
 const SingleProduct = ({ name, imageURL, price }) => {// price type name imageURL 

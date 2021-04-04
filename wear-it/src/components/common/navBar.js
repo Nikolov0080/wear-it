@@ -2,7 +2,7 @@ import React from 'react';
 import HomeLink from './homeLink';
 import LinkButton from './linkButton';
 import linksList from './linksList';
-import style from '../../styles/linkButton.module.css';
+import style from './css/navBar.module.css';
 
 const NavBar = () => {
     return (
