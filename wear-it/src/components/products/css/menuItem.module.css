@@ -1,11 +1,46 @@
+.categoryBox {
+    cursor: pointer;
+    border: lightblue 3px solid;
+    border-radius: 6px;
+    margin: 0px 0px 20px 0px;
+    transition: 0.6s;
+    transition-timing-function: ease-in-out;
+}
+
+.categoryBox:hover {
+    border: darkblue 3px solid;
+}
+
+/* BOX POSITION */
+
+.leftBoxCategory {
+    float: left;
+    width: 75%;
+    text-align: center;
+    margin-top: 4%;
+    font-size: 120%;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+/*  IMAGE COMPONENTS */
+
+.image {
+    width: 15%;
+}
+
+/* TEST TEXT DECORATION */
+
 .active {
-    color: red;
+    color: black;
+    text-decoration: underline 5px;
+    transition:1.6s;
 }
 
 .inactive {
-color: royalblue;
+    color: royalblue;
 }
 
-.active , .inactive{
+.active, .inactive {
     cursor: pointer;
 }
