@@ -1,11 +1,11 @@
-import React from 'react'
-import LinkButton from './linkButton'
+import React from 'react';
+import NavLink from './navLink';
 import style from './css/homeLink.module.css';
 
 const HomeLink = () => {
     return (
         <div className={style.homeBtn}>
-            <LinkButton name="Home" path="/" />
+            <NavLink name="Home" path="/" />
         </div>
     )
 }

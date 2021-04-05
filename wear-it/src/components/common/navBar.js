@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeLink from './homeLink';
-import LinkButton from './linkButton';
+import NavLink from './navLink';
 import linksList from './linksList';
 import style from './css/navBar.module.css';
 
@@ -9,7 +9,7 @@ const NavBar = () => {
         <div className={style.navBox}>
             <HomeLink />
             {linksList(false).map(({ name, path }, index) => {
-                return <LinkButton key={index} name={name} path={path} />
+                return <NavLink key={index} name={name} path={path} />
             })}
         </div>
     )

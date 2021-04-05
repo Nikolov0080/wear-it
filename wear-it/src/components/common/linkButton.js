@@ -1,14 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import style from './css/linkButton.module.css';
+import { Link } from 'react-router-dom';
 
-const LinkButton = ({ name, path }) => {
-
+const LinkButton = ({ path, value }) => {
     return (
-        <div >
-
-            <Link className={style.linkBtn} to={path} >{name}</Link>
-
+        <div>
+            <Link to={path}>{value}</Link>
         </div>
     )
 }
