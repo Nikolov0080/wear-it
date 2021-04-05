@@ -1,0 +1,16 @@
+.pageInfo {
+    margin: auto;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    width: 90%;
+    text-align: center;
+}
+
+.spanSpecial {
+    font-size: larger;
+}
+
+.authBox {
+    margin-top: 10%;
+    font-weight: bolder;
+}

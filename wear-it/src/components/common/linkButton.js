@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 
 const LinkButton = ({ path, value }) => {
     return (
-        <div>
-            <Link to={path}>{value}</Link>
-        </div>
+        <Link className={style.linkBtn} to={path}>
+            <div className={style.btn}>
+                {value}
+            </div>
+        </Link>
     )
 }
 

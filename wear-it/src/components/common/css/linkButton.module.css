@@ -1,0 +1,21 @@
+.linkBtn {
+    text-decoration: none;
+    color: rgb(13, 175, 230);
+}
+
+.btn {
+    margin: auto;
+    transition: 0.6s;
+    transition-timing-function: ease-in-out;
+    border: 3px skyblue solid;
+    width: auto;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    border-radius: 20px;
+    border: 3px rgb(71, 179, 221) solid;
+    background: rgb(242, 249, 250);
+    color: rgb(6, 138, 182);
+}

@@ -1,26 +1,5 @@
-.active {
-    color: red;
-}
-
-.inactive {
-color: royalblue;
-}
-
-.active , .inactive{
-    cursor: pointer;
-}
-
-.pageInfo{
+.menuItemsBox {
     margin: auto;
-    margin-top: 20%;
+    margin-top: 10%;
     width: 90%;
-    text-align: center;
-}
-
-.spanSpecial{
-   font-size: larger;
-}
-
-.authSpan{
-    margin-top: 60px;
 }
