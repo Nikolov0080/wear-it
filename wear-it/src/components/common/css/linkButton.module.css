@@ -7,7 +7,7 @@
     margin: auto;
     transition: 0.6s;
     transition-timing-function: ease-in-out;
-    border: 3px skyblue solid;
+    border: 3px rgb(76, 182, 224) solid;
     width: auto;
     padding: 10px;
     text-transform: uppercase;
@@ -16,7 +16,7 @@
 
 .btn:hover {
     border-radius: 20px;
-    border: 3px rgb(71, 179, 221) solid;
+    border: 3px rgb(45, 174, 224) solid;
     background: rgb(242, 249, 250);
-    color: rgb(6, 138, 182);
+    color: rgb(10, 77, 99);
 }

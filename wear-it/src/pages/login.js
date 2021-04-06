@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import LoginForm from '../components/user/loginForm'
 
 export class Login extends Component {
 
@@ -6,7 +7,7 @@ export class Login extends Component {
     render() {
         return (
             <div>
-                LOGIN
+               <LoginForm/>
             </div>
         )
     }

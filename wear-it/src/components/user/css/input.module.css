@@ -1,0 +1,23 @@
+.input {
+    font-size: 25px;
+    text-align: center;
+    font-weight: 200;
+    margin: 4%;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid black;
+    transition: 0.8s;
+    transition-timing-function: ease-in-out;
+    padding: 5px 5px 0px 5px;
+}
+
+.input:focus {
+    outline: none;
+    border: none;
+    box-shadow: 1px 2px 4px 2px lightgray;
+    border-radius: 8px;
+}
+
+.error {
+    color: red;
+}
