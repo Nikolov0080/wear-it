@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import AuthButton from './btn';
 import Input from './input';
 import loginValidator from '../../validations/user/loginValidator';
+import ErrMessage from '../common/errMessage';
 import style from './css/loginForm.module.css';
 
 const LoginForm = () => {
@@ -12,14 +13,21 @@ const LoginForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setErr(loginValidator(username, password))        // console.log(username)
-        // console.log(password)
+        setErr(loginValidator(username, password));
+        // make db calls 
+    }
+
+    const check = (e) => {
+        if (err !== false) {
+            setErr(loginValidator(username, password));
+        }
     }
 
     return (
-        <div className={style.loginForm}>
+        <div onChange={(e) => check(e)} className={style.loginForm}>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <h2 className={style.title}>LOGIN</h2>
+                {err !== false ? <ErrMessage err={err} /> : ''}
                 <Input
                     err={err}
                     foo={setUsername}

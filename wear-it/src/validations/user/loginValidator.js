@@ -1,5 +1,14 @@
-export default function (username, password) {
+export default function loginValidator(username, password) {
     // todo CHECK IF THE USER EXISTS IN THE DATABASE
+
+    if (username === '') {
+        return "Username is empty";
+    }
+
+    if (password === '') {
+        return "Password is empty";
+    }
+
     if (username.length < 6 || 20 <= username.length) {
         return 'Username must be 6 to 20 symbols long';
     }

@@ -1,0 +1,8 @@
+.errBox {
+    margin: auto;
+    width: 60%;
+    padding: 1%;
+    font-weight: 500;
+    background-color: rgb(247, 144, 144);
+    border-radius: 6px;
+}
