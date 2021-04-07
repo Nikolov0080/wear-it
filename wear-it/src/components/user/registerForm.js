@@ -1,9 +1,59 @@
-import React from 'react'
+import React, { useState } from 'react'
+import style from './css/registerForm.module.css';
+import AuthButton from './btn';
+import Input from './input';
 
 const RegisterForm = () => {
+
+
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [rePassword, setRePassword] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const validData = {
+            username,
+            email,
+            password
+        }
+       console.log(validData)
+    }
+
+
+
     return (
         <div>
-            RegisterForm
+            <div className={style.registerForm}>
+                <h2 className={style.title}>REGISTER</h2>
+                <form onSubmit={(e) => handleSubmit(e)}>
+
+                    <Input name="username"
+                        placeholder="Username"
+                        type="text"
+                        foo={setUsername} />
+
+                    <Input name="email"
+                        placeholder="Email"
+                        type="email"
+                        foo={setEmail} />
+
+                    <Input name="password"
+                        placeholder="Password"
+                        type="password"
+                        foo={setPassword} />
+
+                    <Input name="rePassword"
+                        placeholder="Repeat Password"
+                        type="password"
+                        foo={setRePassword} />
+
+
+                    <AuthButton value="submit" />
+
+                </form>
+            </div>
         </div>
     )
 }

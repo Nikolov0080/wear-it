@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import AuthButton from './btn';
-import style from './css/loginForm.module.css';
 import Input from './input';
+import loginValidator from '../../validations/user/loginValidator';
+import style from './css/loginForm.module.css';
 
 const LoginForm = () => {
 
@@ -10,8 +11,9 @@ const LoginForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(username)
-        console.log(password)
+        console.log(loginValidator(username,password))
+        // console.log(username)
+        // console.log(password)
     }
 
     return (

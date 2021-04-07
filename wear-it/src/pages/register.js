@@ -1,18 +1,11 @@
 import React, { Component } from 'react'
+import RegisterForm from '../components/user/registerForm'
 
 export class Register extends Component {
     render() {
         return (
             <div>
-
-
-
-
-
-
-
-                
-                REGISTER
+              <RegisterForm />               
             </div>
         )
     }
