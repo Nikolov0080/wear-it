@@ -8,11 +8,11 @@ const LoginForm = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [err, setErr] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(loginValidator(username,password))
-        // console.log(username)
+        setErr(loginValidator(username, password))        // console.log(username)
         // console.log(password)
     }
 
@@ -21,12 +21,14 @@ const LoginForm = () => {
             <form onSubmit={(e) => handleSubmit(e)}>
                 <h2 className={style.title}>LOGIN</h2>
                 <Input
+                    err={err}
                     foo={setUsername}
                     name="username"
                     placeholder="Username"
                     type="text"
                 />
                 <Input
+                    err={err}
                     foo={setPassword}
                     name="password"
                     placeholder="Password"

@@ -1,9 +1,9 @@
 import React from 'react'
 import style from './css/input.module.css';
 
-const Input = ({ type, name, placeholder, foo }) => {// add error here as PROP
+const Input = ({ type, name, placeholder, foo, err }) => {// add error here as PROP
 
-    const error = false;
+
     //   ADD VALIDATIONS !!!    
     return (
         <div>
@@ -15,13 +15,13 @@ const Input = ({ type, name, placeholder, foo }) => {// add error here as PROP
                 placeholder={placeholder}
                 className={style.input} />
 
-            {error !== false
+            {err !== false
                 ?
-                <div className={style.error}>
+                <div className={style.err}>
                     {/* {errorMessage} */}
                     {/* SET ERROR MESSAGE HERE */}
-                ERROR TEST
-            </div>
+                    {err}
+                </div>
                 :
                 ''
             }
