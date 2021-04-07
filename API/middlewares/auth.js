@@ -6,7 +6,7 @@ module.exports = function () {
 
         let token = req.cookies[COOKIE_NAME];
         const headers = req.headers;
-
+        console.log(headers)
         // fix for headers after
 
         if (token) {

@@ -6,7 +6,6 @@ const { COOKIE_NAME } = require('../../../config/index');
 module.exports.login = (req, res) => {
 
     const { username, password } = req.body;
-
     if (req.body.errors) {
 
         return res.send(req.body.errors)
@@ -14,22 +13,19 @@ module.exports.login = (req, res) => {
         // return res.render('login', { errors: req.body.errors });
 
     } else {
-
         userSchema.findOne({ username }).then(resp => {
             if (resp) {
                 bcrypt.compare(password, resp.password).then((result) => {
                     if (result) {
-
                         console.log(resp)
                         const token = jwt.createToken({ user: resp });
                         res.cookie(COOKIE_NAME, token, { expires: new Date(Date.now() + 72 * 3600000), httpOnly: true })
-                        res.redirect('/');
+                        res.send(token);
                     }
                 })
-            }else{
+            } else {
                 res.send('no user found');
             }
-
         })
     }
 }

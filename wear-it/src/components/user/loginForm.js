@@ -4,8 +4,9 @@ import Input from './input';
 import loginValidator from '../../validations/user/loginValidator';
 import ErrMessage from '../common/errMessage';
 import style from './css/loginForm.module.css';
+import { loginController } from '../../controllers/user/login';
 
-const LoginForm = () => {
+const LoginForm = (props) => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -14,7 +15,9 @@ const LoginForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErr(loginValidator(username, password));
-        // make db calls 
+        if (err === false) {
+            loginController(username, password)
+        }
     }
 
     const check = (e) => {

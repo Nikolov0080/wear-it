@@ -14,7 +14,6 @@ export default function registerValidator(username, email, password, rePassword)
         return "Username can include only letters,digits , '_ - and . '";
     }
 
-
     if (email.length > 40) {
         return "Email is over 40 symbols...";
     }
@@ -27,5 +26,6 @@ export default function registerValidator(username, email, password, rePassword)
         console.log(password.length);
         return 'Password must be 6 to 20 symbols long';
     }
+    
     return false;
 }
