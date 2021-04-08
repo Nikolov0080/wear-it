@@ -23,7 +23,7 @@ module.exports.login = (req, res) => {
                     }
                 })
             } else {
-                res.send('no user found');
+                res.status(202).send('no user found');
             }
         })
     }

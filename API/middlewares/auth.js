@@ -6,8 +6,6 @@ module.exports = function () {
 
         let token = req.cookies[COOKIE_NAME] || req.headers[COOKIE_NAME];
 
-        console.log(token)
-
         if (token) {
             const decoded = jwt.decodeToken(token);
             req.user = decoded;

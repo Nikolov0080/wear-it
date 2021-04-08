@@ -4,6 +4,7 @@ import AuthButton from './btn';
 import registerValidator from '../../validations/user/registerValidator';
 import ErrMessage from '../common/errMessage';
 import Input from './input';
+import registerController from '../../controllers/user/register';
 
 const RegisterForm = () => {
 
@@ -17,12 +18,11 @@ const RegisterForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErr(registerValidator(username, email, password, rePassword));
-        const validData = {
-            username,
-            email,
-            password
+
+        if (err === false) {
+            registerController(username, email, password, rePassword).then(console.log);
         }
-        console.log(validData)
+
     }
 
     const check = (e) => {

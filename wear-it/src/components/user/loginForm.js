@@ -16,7 +16,7 @@ const LoginForm = (props) => {
         e.preventDefault();
         setErr(loginValidator(username, password));
         if (err === false) {
-            loginController(username, password)
+            loginController(username, password).then(console.log);
         }
     }
 
