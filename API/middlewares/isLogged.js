@@ -1,8 +1,7 @@
-  
 module.exports = (req, res, next) => {
     if (!req.user) {
-        return res.redirect('/user/login');
+        return res.status(401).send("UNAUTHORIZED");
+    } else {
+        next();
     }
-
-    next();
 }

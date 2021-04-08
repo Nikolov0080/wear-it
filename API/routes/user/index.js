@@ -6,7 +6,7 @@ const { register } = require('../../controllers/user/POST/register');
 const { login } = require('../../controllers/user/POST/login');
 const loginValidation = require('../../middlewares/validations/login');
 const registerValidation = require('../../middlewares/validations/register');
-const isGuest = require('../../middlewares/isGuest')
+const isGuest = require('../../middlewares/isGuest');
 
 router.get('/orders', (req, res) => {
     res.send("orders test get");

@@ -17,7 +17,6 @@ module.exports.login = (req, res) => {
             if (resp) {
                 bcrypt.compare(password, resp.password).then((result) => {
                     if (result) {
-                        console.log(resp)
                         const token = jwt.createToken({ user: resp });
                         res.cookie(COOKIE_NAME, token, { expires: new Date(Date.now() + 72 * 3600000), httpOnly: true })
                         res.send(token);
