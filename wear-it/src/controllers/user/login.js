@@ -10,7 +10,7 @@ export function loginController(username, password) {
     ).then((resp) => {
         const token = resp.data;
         
-        if (resp.status) {
+        if (resp.status ===202) {
             return resp;
         }else{
             cookies(token);

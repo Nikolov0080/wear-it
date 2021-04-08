@@ -12,7 +12,7 @@ export default function registerController(username, email, password, rePassword
     ).then((resp) => {
         const token = resp.data;
 
-        if (resp.status) {
+        if (resp.status !== 202) {
             return resp;
         } else {
             cookies(token);
