@@ -1,5 +1,5 @@
 const axios = require('axios').default
-const cookies = require('../../utils/cookies').default;
+const { createCookie } = require('../../utils/cookies').default;
 
 export function loginController(username, password) {
 
@@ -9,11 +9,11 @@ export function loginController(username, password) {
     }
     ).then((resp) => {
         const token = resp.data;
-        
-        if (resp.status ===202) {
+
+        if (resp.status === 202) {
             return resp;
-        }else{
-            cookies(token);
+        } else {
+            createCookie(token);
         }
     })
         .catch((e) => {

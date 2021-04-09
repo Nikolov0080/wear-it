@@ -1,4 +1,11 @@
-const cookies = (token) => {
-    document.cookie = "auth=" + token;
-}
-export default cookies;
+const cookieFunctions = {
+    createCookie: (token) => {
+        document.cookie = "auth=" + token;
+
+    },
+    deleteCookie: (key) => {
+
+    }
+};
+
+export default cookieFunctions;

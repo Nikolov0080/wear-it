@@ -1,7 +1,7 @@
 const { userSchema } = require('../../../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('../../../JWT/index');
-const { COOKIE_NAME } = require('../../../config/index');
+const { COOKIE_NAME} = require('../../../config/index');
 
 module.exports.login = (req, res) => {
 

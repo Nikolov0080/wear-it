@@ -1,10 +1,15 @@
 import jwt from 'jsonwebtoken';
 
-export default {
+const jwtFunctions = {
     createToken: (data) => {
         jwt.sign(data, "meow");
     },
     decodeToken: (token) => {
-        return jwt.decode(token);
+        return jwt.decode(token, 'meow', function (err, decoded) {
+            if (err) { return err }
+            return decoded
+        })
     }
 }
+
+export default jwtFunctions;

@@ -1,12 +1,24 @@
 import React, { Component } from 'react'
 import Context from './Context';
+import getToken from '../utils/getToken';
+
+
 
 export class UserContext extends Component {
-
+    // todo implement loading
     state = {
         user: null,
         cart: null,
         currentCategory: null
+    }
+
+    componentDidMount() {
+        if (document.cookie.includes("auth")) {
+            const userData = getToken();
+            this.login(userData);
+        } else {
+            this.logOut();
+        }
     }
 
     login = (userData) => {
@@ -30,6 +42,7 @@ export class UserContext extends Component {
     }
 
     render() {
+
 
         return (
             <Context.Provider

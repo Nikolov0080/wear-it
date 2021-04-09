@@ -11,7 +11,7 @@ const LoginForm = (props) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [err, setErr] = useState(false);
-
+    // set no user found as an error
     const handleSubmit = (e) => {
         e.preventDefault();
         setErr(loginValidator(username, password));

@@ -9,7 +9,7 @@ import registerController from '../../controllers/user/register';
 const RegisterForm = () => {
 
     const [err, setErr] = useState(false);
-
+// set validation  for same username or / and email
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
