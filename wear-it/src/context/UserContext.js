@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import Context from './Context';
 import getToken from '../utils/getToken';
 
-
-
 export class UserContext extends Component {
     // todo implement loading
     state = {
@@ -14,8 +12,10 @@ export class UserContext extends Component {
 
     componentDidMount() {
         if (document.cookie.includes("auth")) {
-            const userData = getToken();
-            this.login(userData);
+            getToken().then((userData)=>{
+
+                this.login(userData);
+            })
         } else {
             this.logOut();
         }

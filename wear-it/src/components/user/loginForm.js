@@ -1,22 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import AuthButton from './btn';
 import Input from './input';
 import loginValidator from '../../validations/user/loginValidator';
 import ErrMessage from '../common/errMessage';
 import style from './css/loginForm.module.css';
 import { loginController } from '../../controllers/user/login';
+import Context from '../../context/Context';
 
-const LoginForm = (props) => {
+const LoginForm = () => {
 
+    const context = useContext(Context);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [err, setErr] = useState(false);
     // set no user found as an error
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setErr(loginValidator(username, password));
-        if (err === false) {
-            loginController(username, password).then(console.log);
+        if (err === false) { // fix
+            loginController(username, password).then((resp) => {
+                if (resp.status === 202) {
+                    return setErr(resp.data);
+                }
+                context.login(resp);
+            });
         }
     }
 

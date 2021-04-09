@@ -1,3 +1,5 @@
+import jwt from '../../utils/JWT';
+
 const axios = require('axios').default
 const { createCookie } = require('../../utils/cookies').default;
 
@@ -8,12 +10,12 @@ export function loginController(username, password) {
         password
     }
     ).then((resp) => {
-        const token = resp.data;
 
         if (resp.status === 202) {
             return resp;
         } else {
-            createCookie(token);
+            createCookie(resp.data);
+            return jwt.decodeToken(resp.data);
         }
     })
         .catch((e) => {

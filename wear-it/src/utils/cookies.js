@@ -4,7 +4,7 @@ const cookieFunctions = {
 
     },
     deleteCookie: (key) => {
-
+        // todo
     }
 };
 

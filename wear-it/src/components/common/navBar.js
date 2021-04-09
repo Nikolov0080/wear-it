@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import HomeLink from './homeLink';
 import NavLink from './navLink';
 import linksList from './linksList';
@@ -8,13 +8,20 @@ import Context from '../../context/Context';
 const NavBar = () => {
 
     const context = useContext(Context);
-console.log(context)
+    console.log(context);
+
+    useEffect(() => {
+        setIsAuth(!!context.user);
+    }, [context]);
+
+    const [isAuth, setIsAuth] = useState(!!context.user);
+
     return (
         <div className={style.navBox}>
             <HomeLink />
-            {linksList(false).map(({ name, path }, index) => {
-                return <NavLink key={index} name={name} path={path} />
-            })}
+                {linksList(isAuth).map(({ name, path }, index) => {
+                    return <NavLink key={index} name={name} path={path} />
+                })}
         </div>
     )
 }
