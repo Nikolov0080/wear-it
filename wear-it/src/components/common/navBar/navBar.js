@@ -3,7 +3,7 @@ import HomeLink from './homeLink';
 import NavLink from './navLink';
 import linksList from './linksList';
 import style from './css/navBar.module.css';
-import Context from '../../context/Context';
+import Context from '../../../context/Context';
 
 const NavBar = () => {
 

@@ -10,6 +10,7 @@ import Context from '../../context/Context';
 const LoginForm = () => {
 
     const context = useContext(Context);
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [err, setErr] = useState(false);
@@ -17,14 +18,16 @@ const LoginForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setErr(loginValidator(username, password));
-        if (err === false) { // fix
+        setErr(loginValidator(username,password))
+
+        if (loginValidator(username,password)=== false) { // fix
+
             loginController(username, password).then((resp) => {
                 if (resp.status === 202) {
                     return setErr(resp.data);
                 }
                 context.login(resp);
-            });
+            })
         }
     }
 

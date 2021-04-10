@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import style from './css/registerForm.module.css';
 import AuthButton from './btn';
 import registerValidator from '../../validations/user/registerValidator';
 import ErrMessage from '../common/errMessage';
 import Input from './input';
 import registerController from '../../controllers/user/register';
+import Context from '../../context/Context';
 
 const RegisterForm = () => {
 
+    const context = useContext(Context);
     const [err, setErr] = useState(false);
-// set validation  for same username or / and email
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -17,17 +18,21 @@ const RegisterForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         setErr(registerValidator(username, email, password, rePassword));
 
-        if (err === false) {
-            registerController(username, email, password, rePassword).then(console.log);
+        if (registerValidator(username, email, password, rePassword) === false) {
+            registerController(username, email, password, rePassword).then((resp) => {
+                if (resp.status === 202) { return setErr(resp.data) }
+                context.login(resp);
+            })
         }
 
     }
 
     const check = (e) => {
         if (err !== false) {
-            setErr(registerValidator(username, password));
+            setErr(registerValidator(username, email, password, rePassword));
         }
     }
 
@@ -57,7 +62,6 @@ const RegisterForm = () => {
                         placeholder="Repeat Password"
                         type="password"
                         foo={setRePassword} />
-
 
                     <AuthButton value="submit" />
 

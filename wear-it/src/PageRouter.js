@@ -4,6 +4,7 @@ import Login from './pages/login';
 import Home from './pages/home';
 import Layout from './pages/layout';
 import Register from './pages/register';
+import Profile from './pages/profile';
 
 class PageRouter extends Component {
 
@@ -16,6 +17,7 @@ class PageRouter extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/profile" component={Profile} />
 
           </Switch>
         </Layout>

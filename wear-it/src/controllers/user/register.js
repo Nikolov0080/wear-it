@@ -1,5 +1,6 @@
 const axios = require('axios').default
-const cookies = require('../../utils/cookies').default;
+const cookieFunctions = require('../../utils/cookies').default;
+const jwt = require("../../utils/JWT").default;
 
 export default function registerController(username, email, password, rePassword) {
 
@@ -15,7 +16,8 @@ export default function registerController(username, email, password, rePassword
         if (resp.status === 202) {
             return resp;
         } else {
-            cookies(token);
+            cookieFunctions.createCookie(token);
+            return jwt.decodeToken(resp.data).user;
         }
     })
         .catch(console.log)

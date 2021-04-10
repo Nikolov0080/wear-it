@@ -3,7 +3,7 @@ export default function linksList(isAuth) {
         return [
             {
                 name: 'Profile',
-                path: '/'
+                path: '/profile'
             },
         ]
     }

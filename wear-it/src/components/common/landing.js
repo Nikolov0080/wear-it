@@ -1,11 +1,10 @@
 import React from 'react'
 import style from './css/landing.module.css';
-import LinkButton from './linkButton';
+import LinkButton from './navBar/linkButton';
 
 const Landing = ({ user }) => {
 
     const userBool = !!user;
-
 
     return (
         <div className={style.pageInfo}>
