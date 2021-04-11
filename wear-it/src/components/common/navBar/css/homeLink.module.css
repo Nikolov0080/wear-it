@@ -1,6 +1,19 @@
 .homeBtn {
     float: left;
     margin-left: 50px;
-    margin-right: 65%;
+    margin-right: 55%;
     font-size: 22px;
+    width: 180px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .homeBtn {
+        margin-right: 35%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .homeBtn {
+        margin-right: 25%;
+    }
 }

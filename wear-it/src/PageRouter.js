@@ -5,6 +5,8 @@ import Home from './pages/home';
 import Layout from './pages/layout';
 import Register from './pages/register';
 import Profile from './pages/profile';
+import Cart from './pages/cart';
+import ProductDetails from './pages/productDetails';
 
 class PageRouter extends Component {
 
@@ -18,6 +20,8 @@ class PageRouter extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/cart" component={Cart} />
+            <Route exact path="/details/:productName/:productId" component={ProductDetails} />
 
           </Switch>
         </Layout>

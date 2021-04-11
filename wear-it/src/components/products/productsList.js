@@ -27,11 +27,15 @@ const ProductsList = () => {
 
     }, [context.currentCategory]);
 
+    console.log(currentProducts)
+
     return (
         <div className={style.box}>
-            {currentProducts.map(({ imageURL, name, price }, index) => {
+            {currentProducts.map(({ id, imageURL, name, price }, index) => {
                 return (
-                    <SingleProduct key={index} imageURL={imageURL} name={name} price={price} />
+
+                    <SingleProduct key={index} imageURL={imageURL} id={id} name={name} price={price} />
+
                 )
             })}
         </div>

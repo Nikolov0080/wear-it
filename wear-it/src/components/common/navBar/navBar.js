@@ -4,6 +4,7 @@ import NavLink from './navLink';
 import linksList from './linksList';
 import style from './css/navBar.module.css';
 import Context from '../../../context/Context';
+import CartIcon from '../../cart/cartIcon';
 
 const NavBar = () => {
 
@@ -19,9 +20,10 @@ const NavBar = () => {
     return (
         <div className={style.navBox}>
             <HomeLink />
-                {linksList(isAuth).map(({ name, path }, index) => {
-                    return <NavLink key={index} name={name} path={path} />
-                })}
+            {linksList(isAuth).map(({ name, path }, index) => {
+                return <NavLink key={index} name={name} path={path} />
+            })}
+            <CartIcon />
         </div>
     )
 }

@@ -1,11 +1,17 @@
 import React from 'react'
 import style from './css/cartIcon.module.css';
+import cart from './cart.png';
+import { Link } from 'react-router-dom';
 
 const CartIcon = () => {
     return (
-        <div>
-
-        </div>
+            <div className={style.cartBox}>
+                <Link to="/cart">
+                    <img className={style.cart} src={cart} alt="cart" />
+                </Link>
+                <div className={style.cartLabel}>my cart</div>
+                <div className={style.cartItems}>0</div>
+            </div>
     )
 }
 

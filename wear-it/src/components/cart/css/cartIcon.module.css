@@ -1,0 +1,39 @@
+.cartBox {
+    width: 120px;
+    margin: 0px 30px 0px 40px;
+}
+
+.cartItems {
+    margin: auto;
+    text-align: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: white 1px solid;
+    background-color: rgb(245, 132, 132);
+    cursor: default;
+    font-weight: 500;
+}
+
+.cartLabel {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    cursor: default;
+}
+
+.cartBox:hover .cartLabel {
+    cursor: default;
+}
+
+.cart {
+    float: right;
+    width: 45px;
+    cursor: pointer;
+    transition: 0.6s;
+    transition-timing-function: ease-in-out;
+}
+
+.cart:hover {
+    width: 48px;
+}
