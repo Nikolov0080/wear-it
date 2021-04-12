@@ -16,6 +16,7 @@
 }
 
 .cartLabel {
+    font-size: small;
     text-transform: uppercase;
     color: #fff;
     text-align: center;

@@ -19,6 +19,8 @@ const HomeMenu = ({ currentCategory }) => {
         context.setCategory(type);
     }
 
+// throw new Error('Test Error');
+
     return (
         <div>
             <div>
