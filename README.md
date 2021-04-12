@@ -6,7 +6,8 @@
 ### `Initialize`
 
 - git clone 
-- npm install
+- ..cd wear-it - npm install  
+- ..cd api - npm install  
 - npm start
 
 ### `Structure`
