@@ -23,7 +23,9 @@ const NavBar = () => {
             {linksList(isAuth).map(({ name, path }, index) => {
                 return <NavLink key={index} name={name} path={path} />
             })}
-            <CartIcon />
+
+            {context.user !== null ? <CartIcon /> : ''}
+
         </div>
     )
 }

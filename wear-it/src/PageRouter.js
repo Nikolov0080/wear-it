@@ -7,25 +7,31 @@ import Register from './pages/register';
 import Profile from './pages/profile';
 import Cart from './pages/cart';
 import ProductDetails from './pages/productDetails';
+import UserContext from './context/UserContext';
 
 class PageRouter extends Component {
 
   render() {
     return (
-      <Router>
-        <Layout>
-          <Switch>
+      <div>
+        <Router>
+          <UserContext>
+            <Layout>
+              <Switch>
 
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/profile" component={Profile} />
-            <Route exact path="/cart" component={Cart} />
-            <Route exact path="/details/:productName/:productId" component={ProductDetails} />
+                <Route exact path="/" component={Home} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/profile" component={Profile} />
+                <Route exact path="/cart" component={Cart} />
+                <Route exact path="/details/:productName/:productId" component={ProductDetails} />
 
-          </Switch>
-        </Layout>
-      </Router>
+              </Switch>
+            </Layout>
+          </UserContext>
+        </Router>
+      </div>
+
     );
   }
 }
