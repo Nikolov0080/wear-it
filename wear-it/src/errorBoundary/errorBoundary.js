@@ -8,7 +8,7 @@ class ErrorBoundary extends Component {
 
         this.state = {
             hasError: false,
-            errData: ''
+            errData: props.err
         }
 
     }
@@ -20,7 +20,6 @@ class ErrorBoundary extends Component {
     }
 
     componentDidCatch(error, errorInfo) {
-
         console.log(error);
     }
 
@@ -28,7 +27,7 @@ class ErrorBoundary extends Component {
         if (this.state.hasError) {
             return (
                 <div>
-                    <ErrComponent err="Home page" />
+                    <ErrComponent err={this.state.errData} />
                 </div>
             )
         }

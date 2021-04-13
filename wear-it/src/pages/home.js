@@ -16,19 +16,19 @@ export class Home extends Component {
     render() {
 
         return (
-                <div>
-                    <div className={style.row}>
+            <ErrorBoundary>
+                <div className={style.row}>
 
-                        <div className={style.col1}>
-                            <ErrorBoundary>
-                                <HomeMenu />
-                            </ErrorBoundary>
-                        </div>
-                        <div className={style.col2}>
-                            <ProductsList currentCategory={this.state.currentCategory} />
-                        </div>
+                    <div className={style.col1}>
+
+                        <HomeMenu />
+
+                    </div>
+                    <div className={style.col2}>
+                        <ProductsList currentCategory={this.state.currentCategory} />
                     </div>
                 </div>
+            </ErrorBoundary>
         )
     }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Details from '../components/products/productDetails/details'
 import allProductsJSON from '../components/products/allProductsJSON';
+import ErrorBoundary from '../errorBoundary/errorBoundary';
 
 export class ProductDetails extends Component {
 
@@ -33,12 +34,11 @@ export class ProductDetails extends Component {
 
 
     render() {
-
-        console.log(this.state)
         return (
-            <div>
-                <Details product={this.state.product} foo={this.setProduct} />
-            </div>
+           <ErrorBoundary>
+
+               <Details product={this.state.product} foo={this.setProduct} />
+           </ErrorBoundary>
         )
     }
 }

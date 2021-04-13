@@ -1,4 +1,4 @@
-import jwt from '../../utils/JWT';
+import jwtFunctions from '../../utils/JWT';
 
 const axios = require('axios').default
 const { createCookie } = require('../../utils/cookies').default;
@@ -11,15 +11,23 @@ export function loginController(username, password) {
     }
     ).then((resp) => {
 
+        console.log(resp)
+
         if (resp.status === 202) {
             return resp;
         } else {
             createCookie(resp.data);
-            return jwt.decodeToken(resp.data);
+            return jwtFunctions.decodeToken(resp.data);
         }
     })
         .catch((e) => {
-            return e
+            
+            if(e){
+                return {
+                    status:202,
+                    data:"Connection Error try agin later"
+                }
+            }
         })
 
 }

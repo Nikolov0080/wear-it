@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
+import ErrorBoundary from '../errorBoundary/errorBoundary'
 
 export class Profile extends Component {
 
     render() {
         return (
-            <div>
-User Profile
-            </div>
+            <ErrorBoundary>
+                User Profile
+            </ErrorBoundary>
         )
     }
 }

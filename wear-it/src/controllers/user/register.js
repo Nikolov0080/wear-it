@@ -19,6 +19,13 @@ export default function registerController(username, email, password, rePassword
             cookieFunctions.createCookie(token);
             return jwt.decodeToken(resp.data).user;
         }
+    }).catch((e) => {
+        if (e) {
+            return {
+                status: 202,
+                data: "Connection Error try agin later"
+            }
+        }
     })
         .catch(console.log)
 }
