@@ -3,23 +3,37 @@ import Context from './Context';
 import getToken from '../utils/getToken';
 
 export class UserContext extends Component {
-    // todo implement loading
+
     state = {
-        user: null,
+        user: '',
         cart: null,
-        currentCategory: null
+        currentCategory: null,
+        loading: true
     }
 
     componentDidMount() {
-        if (document.cookie.includes("auth")) {
-            getToken().then((userData)=>{
 
+        if (document.cookie.includes("auth")) {
+            getToken().then((userData) => {
                 this.login(userData);
             })
         } else {
             this.logOut();
         }
     }
+
+    // componentDidUpdate() {
+    //     if (this.state.user === '') {
+    //         if (document.cookie.includes("auth")) {
+    //             getToken().then((userData) => {
+    //                 this.login(userData);
+    //             })
+    //         } else {
+    //             this.logOut();
+    //         }
+    //     }
+
+    // }
 
     login = (userData) => {
         this.setState({
@@ -43,6 +57,18 @@ export class UserContext extends Component {
 
     render() {
 
+        if (this.state.user !== '') {
+            // eslint-disable-next-line
+            this.state.loading = false;
+        }
+
+        if (this.state.loading) {
+            return (
+                <div>
+                    ...loading
+                </div>
+            )
+        }
 
         return (
             <Context.Provider

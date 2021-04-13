@@ -1,5 +1,15 @@
 const axios = require('axios').default;
-// "http://localhost:5000/products/cart"
-export default function (userId) {
-console.log(document.cookie)
+
+export default function (token) {
+
+    return axios.get("http://localhost:5000/products/cart", {
+        headers: {
+            auth: token
+        }
+    }).then(resp => {
+        return resp.data
+    }).catch(e => {
+        return e
+    })
+
 }

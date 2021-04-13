@@ -6,10 +6,12 @@ import ErrMessage from '../common/errMessage';
 import style from './css/loginForm.module.css';
 import { loginController } from '../../controllers/user/login';
 import Context from '../../context/Context';
+import { useHistory } from 'react-router-dom';
 
 const LoginForm = () => {
 
     const context = useContext(Context);
+    const history = useHistory();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -28,6 +30,8 @@ const LoginForm = () => {
                     return setErr(resp.data);
                 }
                 context.login(resp);
+            }).then(() => {
+                history.push('/');
             })
         }
     }
@@ -39,31 +43,31 @@ const LoginForm = () => {
     }
 
     return (
-      
-            <div className={style.box}>
-                <div onChange={(e) => check(e)} className={style.loginForm}>
-                    <form onSubmit={(e) => handleSubmit(e)}>
-                        <h2 className={style.title}>LOGIN</h2>
-                        {err !== false ? <ErrMessage err={err} /> : ''}
-                        <Input
-                            err={err}
-                            foo={setUsername}
-                            name="username"
-                            placeholder="Username"
-                            type="text"
-                        />
-                        <Input
-                            err={err}
-                            foo={setPassword}
-                            name="password"
-                            placeholder="Password"
-                            type="password"
-                        />
-                        <AuthButton value="Submit" />
-                    </form>
-                </div>
+
+        <div className={style.box}>
+            <div onChange={(e) => check(e)} className={style.loginForm}>
+                <form onSubmit={(e) => handleSubmit(e)}>
+                    <h2 className={style.title}>LOGIN</h2>
+                    {err !== false ? <ErrMessage err={err} /> : ''}
+                    <Input
+                        err={err}
+                        foo={setUsername}
+                        name="username"
+                        placeholder="Username"
+                        type="text"
+                    />
+                    <Input
+                        err={err}
+                        foo={setPassword}
+                        name="password"
+                        placeholder="Password"
+                        type="password"
+                    />
+                    <AuthButton value="Submit" />
+                </form>
             </div>
-  
+        </div>
+
     )
 }
 
