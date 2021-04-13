@@ -18,12 +18,13 @@ const LoginForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setErr(loginValidator(username,password))
+        setErr(loginValidator(username, password))
 
-        if (loginValidator(username,password)=== false) { // fix
+        if (loginValidator(username, password) === false) { // fix todo fix connection error issue
 
             loginController(username, password).then((resp) => {
-                if (resp.status === 202) {
+                console.log(typeof resp)// fix todo fix connection error issue
+                if (resp.status === 202 || resp.hasOwnProperty("Error")) {
                     return setErr(resp.data);
                 }
                 context.login(resp);
@@ -38,27 +39,30 @@ const LoginForm = () => {
     }
 
     return (
-        <div onChange={(e) => check(e)} className={style.loginForm}>
-            <form onSubmit={(e) => handleSubmit(e)}>
-                <h2 className={style.title}>LOGIN</h2>
-                {err !== false ? <ErrMessage err={err} /> : ''}
-                <Input
-                    err={err}
-                    foo={setUsername}
-                    name="username"
-                    placeholder="Username"
-                    type="text"
-                />
-                <Input
-                    err={err}
-                    foo={setPassword}
-                    name="password"
-                    placeholder="Password"
-                    type="password"
-                />
-                <AuthButton value="Submit" />
-            </form>
+        <div className={style.box}>
+            <div onChange={(e) => check(e)} className={style.loginForm}>
+                <form onSubmit={(e) => handleSubmit(e)}>
+                    <h2 className={style.title}>LOGIN</h2>
+                    {err !== false ? <ErrMessage err={err} /> : ''}
+                    <Input
+                        err={err}
+                        foo={setUsername}
+                        name="username"
+                        placeholder="Username"
+                        type="text"
+                    />
+                    <Input
+                        err={err}
+                        foo={setPassword}
+                        name="password"
+                        placeholder="Password"
+                        type="password"
+                    />
+                    <AuthButton value="Submit" />
+                </form>
+            </div>
         </div>
+
     )
 }
 

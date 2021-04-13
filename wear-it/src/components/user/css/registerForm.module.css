@@ -7,6 +7,10 @@
     border-radius: 20px;
 }
 
+.box{
+    height: 41rem;
+}
+
 .title {
     padding-top: 4%;
     letter-spacing: 4px;

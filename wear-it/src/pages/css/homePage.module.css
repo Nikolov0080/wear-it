@@ -1,6 +1,7 @@
 .col1{
     float: left;
     width: 30%;
+    min-height: 53rem;
 }
 
 .col2{

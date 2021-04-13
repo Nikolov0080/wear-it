@@ -37,7 +37,7 @@ const RegisterForm = () => {
     }
 
     return (
-        <div>
+        <div className={style.box}>
             <div onChange={(e) => check(e)} className={style.registerForm}>
                 <h2 className={style.title}>REGISTER</h2>
                 {err !== false ? <ErrMessage err={err} /> : ''}
