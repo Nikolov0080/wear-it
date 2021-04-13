@@ -9,7 +9,6 @@ import CartIcon from '../../cart/cartIcon';
 const NavBar = () => {
 
     const context = useContext(Context);
-    console.log(context);
 
     useEffect(() => {
         setIsAuth(!!context.user);
