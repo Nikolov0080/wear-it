@@ -27,8 +27,6 @@ const ProductsList = () => {
 
     }, [context.currentCategory]);
 
-    console.log(currentProducts)
-
     return (
         <div className={style.box}>
             {currentProducts.map(({ id, imageURL, name, price }, index) => {
