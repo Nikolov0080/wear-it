@@ -1,23 +1,22 @@
-import React, { useContext, useEffect, useState } from 'react'
-// import Context from '../../context/Context';
+import React, { useEffect, useState } from 'react'
+import completeOrder from '../../controllers/orders/completeOrder';
+import deleteOrder from '../../controllers/orders/deleteOrder';
 import getCart from '../../controllers/cart/getCart';
 import pureToken from '../../utils/pureToken';
 import CartItem from './cartItem';
 import style from './css/cartComponent.module.css';
 
-
 const CartComponent = (props) => {
 
     const [token, setToken] = useState();
     const [cart, setCart] = useState('empty');
+    const [total, setTotal] = useState(0);
 
     pureToken().then((resp) => {
         if (resp) {
             setToken(resp);
         }
     })
-
-    // const context = useContext(Context);
 
     useEffect(() => {
         if (token) {
@@ -27,6 +26,15 @@ const CartComponent = (props) => {
                 })
         }
     }, [token])
+
+    useEffect(() => {
+        if (cart !== 'empty') {
+            setTotal(cart.reduce((acc, cVal) => {
+                acc += cVal.price
+                return acc
+            }, 0))
+        }
+    }, [cart]);
 
 
     if (cart === "empty") {
@@ -48,15 +56,21 @@ const CartComponent = (props) => {
     }
 
     return (
-        <div className={style.cartBox}>
-            {/* FIX THIS WITH WELL STYLED COMPONENT! */}
-            {cart.map((item, index) => {
-                return <CartItem key={index} item={item} />
-            })}
+        <div>
+            <h2 className={style.title}>My Cart</h2>
+            <div className={style.cartBox}>
+                {/* FIX THIS WITH WELL STYLED COMPONENT! */}
+                {cart.map((item, index) => {
+                    return <CartItem key={index} item={item}
+                        completeOrder={completeOrder}
+                        deleteOrder={deleteOrder} />
+                })}
+            </div>
+            <div className={style.total}>
+                {total}
+            </div>
         </div>
     )
-
-
 }
 
 export default CartComponent;

@@ -1,10 +1,47 @@
 .box {
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
-    box-shadow: 2px 2px 8px 3px lightgray;
+    margin-top: 1%;
+    box-shadow: 1px 2px 5px 1px lightgray;
     display: inline-flex;
 }
 
-.image{
+.image {
     width: 100px;
+    margin: 0px 8% 0px 8%;
+}
+
+.details {
+    font-size: large;
+    width: 50%;
+    margin-top: 3%;
+    font-weight: 500;
+}
+
+.total {
+    width: 40%;
+    float: right;
+}
+
+/*  BUTTONS  */
+
+.btnGroup{
+    width: 15%;
+    text-align: center;
+}
+
+.deleteBtn ,.orderBtn{
+    margin-top: 15%;
+    padding: 8%;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.orderBtn {
+    background: rgb(42, 192, 252);
+}
+
+.deleteBtn{
+    background: rgb(243, 118, 96);
 }

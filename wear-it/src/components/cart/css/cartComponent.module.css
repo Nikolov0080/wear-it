@@ -1,6 +1,26 @@
+.title {
+    text-transform: uppercase;
+    text-align: center;
+    background-color: rgb(5, 164, 218);
+    color:#fff;
+    margin: 0;
+    height: 40px;
+    margin-top: 1px;
+}
+
 .cartBox {
-    height: 100%;
-    min-height: 800px;
-    width: 90%;
+    min-height: 80vh;
+    max-height: 85vh;
+    width: 60%;
     margin: 0 auto;
+    overflow: auto;
+    float: left;
+    box-shadow: 0px 0px 10px 2px lightgray;
+}
+
+.total {
+    color: black;
+    width: 40%;
+    height: 200px;
+    float: right;
 }
