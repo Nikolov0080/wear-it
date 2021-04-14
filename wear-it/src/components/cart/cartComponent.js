@@ -11,8 +11,6 @@ const CartComponent = () => {
 
     pureToken().then((resp) => {
         if (resp) {
-            console.log(resp)
-
             setToken(resp);
         }
     })

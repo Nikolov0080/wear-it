@@ -5,14 +5,21 @@ const findAuth = (val) => {
 }
 
 const getTokenData = async () => {
-    const token = // getting the Auth toke out of cookies
-        document.cookie
-            .split('; ')
-            .filter(findAuth)[0]
-            .replace('auth=', '');
+
+    if (document.cookie.includes('auth')) {
+        const token = // getting the Auth toke out of cookies
+            document.cookie
+                .split('; ')
+                .filter(findAuth)[0]
+                .replace('auth=', '');
 
 
-    return token;
+        return token;
+    } else {
+        return false
+    }
+
+
 }
 
 export default getTokenData;

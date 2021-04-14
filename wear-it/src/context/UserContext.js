@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Context from './Context';
 import getToken from '../utils/getToken';
+import pureToken from '../utils/pureToken';
+import getCart from '../controllers/cart/getCart';
 
 export class UserContext extends Component {
 
@@ -16,24 +18,34 @@ export class UserContext extends Component {
         if (document.cookie.includes("auth")) {
             getToken().then((userData) => {
                 this.login(userData);
+                this.setCart();
             })
         } else {
             this.logOut();
         }
     }
 
-    // componentDidUpdate() {
-    //     if (this.state.user === '') {
-    //         if (document.cookie.includes("auth")) {
-    //             getToken().then((userData) => {
-    //                 this.login(userData);
-    //             })
-    //         } else {
-    //             this.logOut();
-    //         }
-    //     }
+    componentDidUpdate() {
+        if (this.state.user !== null && this.state.cart === null) {
+            this.setCart();
+        }
+    }
 
-    // }
+    setCart = () => {
+        pureToken().then((resp) => {
+            if (resp) {
+                getCart(resp).then((resp) => {
+                    this.setState({
+                        cart: resp
+                    });
+                });
+            } else {
+                this.setState({
+                    cart: null
+                });
+            }
+        })
+    }
 
     login = (userData) => {
         this.setState({
@@ -78,7 +90,8 @@ export class UserContext extends Component {
                     currentCategory: this.state.currentCategory,
                     login: this.login,
                     logOut: this.logOut,
-                    setCategory: this.setCategory
+                    setCategory: this.setCategory,
+                    setCart: this.setCart
                 }}
             >
                 { this.props.children}

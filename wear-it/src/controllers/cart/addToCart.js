@@ -1,8 +1,14 @@
 const axios = require('axios').default;
 
-export default function addToCart(token, productId) {
+export default function addToCart(token, data) {
 
-    return axios.get("http://localhost:5000/products/add-to-cart", {
+
+    console.log(token);
+    console.log(data)
+
+    return axios.post("http://localhost:5000/products/add-to-cart", {
+        ...data
+    },{
         headers: {
             auth: token
         }
@@ -11,5 +17,4 @@ export default function addToCart(token, productId) {
     }).catch(e => {
         return e
     })
-
 }

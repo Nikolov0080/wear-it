@@ -4,15 +4,37 @@ import getRandomProducts from '../../../utils/getRandomProducts';
 import style from './css/details.module.css';
 import SingleProduct from '../singleProduct';
 import addToCart from '../../../controllers/cart/addToCart';
+import pureToken from '../../../utils/pureToken';
+import ErrMessage from '../../common/errMessage';
 import Size from './size';
 
 const Details = ({ product, foo }) => { // foo === set current Product
 
     const [size, setSize] = useState('');
-console.log(size)
-    const addToCart = () => {
-        console.log("sdkjfhsdkj")
+    const [err, setErr] = useState(false);
+
+    const add = (data) => {
+        if (size === '') {
+            setErr("Select size please")
+        } else {
+            pureToken().then((token) => {
+const orderData ={
+    productName:data.name,
+    price:data.price,
+    size:size,
+    imageURL:data.imageURL
+
+}
+                addToCart(token, orderData).then(console.log)
+            })
+        }
     }
+
+    useEffect(() => {
+        if (size !== '') {
+            setErr(false);
+        }
+    }, [size]);
 
     return (
         <div>
@@ -22,13 +44,14 @@ console.log(size)
                     <img className={style.image} src={product.imageURL} alt="product" />
                 </div>
                 <div className={style.productInfo}>
+                    {err !== false ? <ErrMessage err={err} /> : ''}
                     <h2 className={style.prodName}>{product.name}</h2>
 
                     <Size foo={setSize} />
 
                     <p className={style.prodPrice}>{product.price} usd</p>
 
-                    <div className={style.btn} onClick={addToCart}>Add to cart</div>
+                    <div className={style.btn} onClick={() => add(product)}>Add to cart</div>
                 </div>
             </div>
             <div className={style.randomProds}>
@@ -37,7 +60,7 @@ console.log(size)
                 {getRandomProducts(allProductsJSON, 3).map(({ price, imageURL, id, name }, index) => {
 
                     return (
-                        <div className={style.prod} onClick={() => foo(id)} key={index} >
+                        <div className={style.prod} onClick={() => foo(id)} key={id.slice(0, 5)} >
                             <SingleProduct imageURL={imageURL} name={name} price={price} id={id} />
                         </div>
                     )
@@ -48,7 +71,5 @@ console.log(size)
 
     )
 }
-
-
 
 export default Details;

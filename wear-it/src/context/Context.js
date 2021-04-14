@@ -7,7 +7,8 @@ const Context = React.createContext(
         currentCategory: null,
         setCategory: () => { },
         login: () => { },
-        logOut: () => { }
+        logOut: () => { },
+        setCart: () => { }
     }
 );
 
