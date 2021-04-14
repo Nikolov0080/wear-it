@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
-import Context from '../../context/Context';
+// import Context from '../../context/Context';
 import getCart from '../../controllers/cart/getCart';
 import pureToken from '../../utils/pureToken';
+import CartItem from './cartItem';
 import style from './css/cartComponent.module.css';
 
-const CartComponent = () => {
+
+const CartComponent = (props) => {
 
     const [token, setToken] = useState();
     const [cart, setCart] = useState('empty');
@@ -15,13 +17,13 @@ const CartComponent = () => {
         }
     })
 
-    const context = useContext(Context);
+    // const context = useContext(Context);
 
     useEffect(() => {
         if (token) {
             getCart(token)
                 .then((resp) => {
-                    setCart(resp)
+                    setCart(resp);
                 })
         }
     }, [token])
@@ -46,10 +48,10 @@ const CartComponent = () => {
     }
 
     return (
-        <div>
+        <div className={style.cartBox}>
             {/* FIX THIS WITH WELL STYLED COMPONENT! */}
             {cart.map((item, index) => {
-                return <p key={index} >{item.price}</p>
+                return <CartItem key={index} item={item} />
             })}
         </div>
     )
@@ -57,4 +59,4 @@ const CartComponent = () => {
 
 }
 
-export default CartComponent
+export default CartComponent;

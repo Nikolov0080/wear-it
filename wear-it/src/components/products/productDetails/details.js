@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import allProductsJSON from '../allProductsJSON';
 import getRandomProducts from '../../../utils/getRandomProducts';
 import style from './css/details.module.css';
@@ -7,8 +7,10 @@ import addToCart from '../../../controllers/cart/addToCart';
 import pureToken from '../../../utils/pureToken';
 import ErrMessage from '../../common/errMessage';
 import Size from './size';
+import { useHistory } from 'react-router-dom';
 
 const Details = ({ product, foo }) => { // foo === set current Product
+    const history = useHistory();
 
     const [size, setSize] = useState('');
     const [err, setErr] = useState(false);
@@ -18,14 +20,15 @@ const Details = ({ product, foo }) => { // foo === set current Product
             setErr("Select size please")
         } else {
             pureToken().then((token) => {
-const orderData ={
-    productName:data.name,
-    price:data.price,
-    size:size,
-    imageURL:data.imageURL
-
-}
-                addToCart(token, orderData).then(console.log)
+                const orderData = {
+                    productName: data.name,
+                    price: data.price,
+                    size: size,
+                    imageURL: data.imageURL
+                }
+                addToCart(token, orderData).then(resp => {
+                    history.go(0)
+                });
             })
         }
     }
@@ -56,15 +59,12 @@ const orderData ={
             </div>
             <div className={style.randomProds}>
                 <h2 className={style.prodsTitle}>You may also like</h2>
-
                 {getRandomProducts(allProductsJSON, 3).map(({ price, imageURL, id, name }, index) => {
-
                     return (
                         <div className={style.prod} onClick={() => foo(id)} key={id.slice(0, 5)} >
                             <SingleProduct imageURL={imageURL} name={name} price={price} id={id} />
                         </div>
                     )
-
                 })}
             </div>
         </div>

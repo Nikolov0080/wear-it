@@ -7,6 +7,7 @@ import style from './css/layout.module.css';
 export class Layout extends Component {
 
     render() {
+
         return (
             <ErrorBoundary>
                 <div className={style.mainContainer}>
@@ -15,7 +16,6 @@ export class Layout extends Component {
                     <Footer />
                 </div>
             </ErrorBoundary>
-
         )
     }
 }

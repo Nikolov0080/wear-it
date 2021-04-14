@@ -56,7 +56,7 @@ export class UserContext extends Component {
 
     logOut = () => {
         this.setState({
-            user: null,
+            user: null, 
             cart: null
         });
     }
@@ -65,6 +65,11 @@ export class UserContext extends Component {
         this.setState({
             currentCategory: category,
         });
+    }
+
+    currentCart = (data) => {
+        this.setCart()
+        return this.state.cart;
     }
 
     render() {
@@ -91,7 +96,8 @@ export class UserContext extends Component {
                     login: this.login,
                     logOut: this.logOut,
                     setCategory: this.setCategory,
-                    setCart: this.setCart
+                    setCart: this.setCart,
+                    currentCart: this.currentCart
                 }}
             >
                 { this.props.children}
