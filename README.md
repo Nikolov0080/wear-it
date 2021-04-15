@@ -93,6 +93,5 @@ Delete one
  - Login page - "/login"  
  - Register page - "/register"
  - Profile page - "/profile"  
- - Details page - "/details/:product_name/:product_id" 
- - (accessable from Home page)  
+ - Details page - "/details/:product_name/:product_id"  - (accessable from Home page)  
  - Cart page - "/cart"  
