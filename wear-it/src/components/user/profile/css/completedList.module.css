@@ -1,0 +1,8 @@
+.completedBox{
+    box-shadow: 2px 3px 18px 2px lightgray;
+    height: 200px;
+    width: 55%;
+    float: right;
+    height: 800px;
+    overflow: auto;
+}

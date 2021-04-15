@@ -9,9 +9,8 @@ const getCompleted = (userId) => {
 
 module.exports.orders = (req, res) => {
     const userId = req.user.user._id;
-
     getCompleted(userId).then((orders) => {
-        return res.send(orders)
+        return res.send(orders);
     }).catch((e) => {
         console.log(e)
         return res.send(e);

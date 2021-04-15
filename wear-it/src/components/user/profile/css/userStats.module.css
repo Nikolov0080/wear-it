@@ -1,0 +1,6 @@
+.infoBox {
+    text-align: center;
+    box-shadow: 2px 3px 18px 2px lightgray;
+    width: 42%;
+    float: left;
+}

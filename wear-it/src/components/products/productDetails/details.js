@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import allProductsJSON from '../allProductsJSON';
 import getRandomProducts from '../../../utils/getRandomProducts';
 import style from './css/details.module.css';

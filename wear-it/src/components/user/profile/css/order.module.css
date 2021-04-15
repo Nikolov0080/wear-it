@@ -1,0 +1,25 @@
+.orderBox {
+    width: 96%;
+    margin: 10px 0px 0px 15px;
+    box-shadow: 2px 3px 18px 2px lightgray;
+    display: inline-flex;
+}
+
+.image {
+    width: 10%;
+    padding: 3%;
+    margin-right: 15px;
+    box-shadow: 2px 3px 18px 2px lightgray;
+}
+
+.productName, .size, .price {
+    font-size: normal;
+    font-weight: 600;
+    text-align: center;
+    width: 25%;
+    margin-top: 8%;
+}
+
+.price{
+    color: darkolivegreen;
+}

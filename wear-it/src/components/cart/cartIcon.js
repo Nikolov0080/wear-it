@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import style from './css/cartIcon.module.css';
 import cartImage from './cartImage.png';
 import { Link } from 'react-router-dom';
-import Context from '../../context/Context';
 import getCart from '../../controllers/cart/getCart';
 import pureToken from '../../utils/pureToken';
 
