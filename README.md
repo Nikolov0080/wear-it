@@ -40,7 +40,7 @@ Cart model
 
 - **Complete order**:  
 Includes complete order 
-Sets **Last order** info in Home page  
+Sets **Completed orders** info in Profile page  
 
 - **Delete order**:   
 Deletes products from cart  
