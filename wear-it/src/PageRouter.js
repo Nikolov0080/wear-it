@@ -10,6 +10,7 @@ import ProductDetails from './pages/productDetails';
 import UserContext from './context/UserContext';
 import GuestRoute from './protectedRoutes/guestRoute';
 import UserRoute from './protectedRoutes/userRoute';
+import ErrorPage from './pages/errorPage';
 
 
 class PageRouter extends Component {
@@ -28,6 +29,7 @@ class PageRouter extends Component {
                 <UserRoute path="/profile" component={Profile} />
                 <UserRoute exact path="/cart" component={Cart} />
                 <UserRoute exact path="/details/:productName/:productId" component={ProductDetails} />
+                <Route exact path="*" component={ErrorPage} />
 
               </Switch>
             </Layout>

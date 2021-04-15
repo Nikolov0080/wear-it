@@ -1,0 +1,32 @@
+.notFound {
+    margin: 0 auto;
+    height: 100vh;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.image {
+    margin: auto;
+    width: 500px;
+    animation-name: example;
+    animation-iteration-count: 40;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+}
+
+@keyframes example {
+    0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(158, 154, 154, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(117, 115, 115, 0);
+	}
+}
