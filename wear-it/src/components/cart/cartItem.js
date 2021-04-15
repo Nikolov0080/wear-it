@@ -3,15 +3,17 @@ import style from './css/cartItem.module.css';
 import completeOrder from '../../controllers/orders/completeOrder';
 import deleteOrder from '../../controllers/orders/deleteOrder';
 
-const CartItem = ({ item, token }) => {
+const CartItem = ({ item, token, update }) => {
 
 
     const complete = () => {
         completeOrder(item._id, token).then(console.log)
+        update(val => val + 2)
     }
 
     const deleteOne = () => {
         deleteOrder(item._id, token).then(console.log)
+        update(val => val + 2)
     }
 
     return (

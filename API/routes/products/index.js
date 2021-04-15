@@ -18,7 +18,6 @@ router.post('/single-order', isLogged, singleOrder);
 
 router.post('/delete-order', isLogged, deleteOrder);
 
-
 router.get('/make-order', isLogged, makeOrderGET)
     .post('/make-order', isLogged, makeOrderPOST);
 
