@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import getCart from '../../controllers/cart/getCart';
 import deleteAllOrders from '../../controllers/orders/deleteAllOrders';
 import completeAllOrders from '../../controllers/orders/completeAllOrders';
-
+import ErrorBoundary from '../../errorBoundary/errorBoundary';
 import pureToken from '../../utils/pureToken';
 import CartItem from './cartItem';
 import { Link } from 'react-router-dom';
@@ -64,36 +64,36 @@ const CartComponent = (props) => {
 
     return (
         <div>
-            <h2 className={style.title}>My Cart</h2>
-            <div className={style.cartBox}>
-                {/* FIX THIS WITH WELL STYLED COMPONENT! */}
-                {cart.map((item, index) => {
-                    return <CartItem key={index} item={item}
-                        update={setUpdate}
-                        token={token}
-                    />
-                })}
-            </div>
+            <ErrorBoundary err="Cart component">
+                <h2 className={style.title}>My Cart</h2>
+                <div className={style.cartBox}>
+                    {/* FIX THIS WITH WELL STYLED COMPONENT! */}
+                    {cart.map((item, index) => {
+                        return <CartItem key={index} item={item}
+                            update={setUpdate}
+                            token={token}
+                        />
+                    })}
+                </div>
 
-            <div className={style.total}>
-                {cart.length !== 0 ?
-                    <div>
-                        <div className={style.totalPrice}>Total Price <br /> {total} USD</div>
-                        <div onClick={() => completeAll()} className={style.orderBtn}>complete all</div>
-                        <div onClick={() => deleteAll()} className={style.deleteBtn}>delete all</div>
-                    </div>
-
-                    :
-                    <div className={style.noItems}>
-                        Nothing in cart...
+                <div className={style.total}>
+                    {cart.length !== 0 ?
+                        <div>
+                            <div className={style.totalPrice}>Total Price <br /> {total} USD</div>
+                            <div onClick={() => completeAll()} className={style.orderBtn}>complete all</div>
+                            <div onClick={() => deleteAll()} className={style.deleteBtn}>delete all</div>
+                        </div>
+                        :
+                        <div className={style.noItems}>
+                            Nothing in cart...
                         Make an order from <br />
-                        <Link className={style.link} to='/'>
-                            HERE
+                            <Link className={style.link} to='/'>
+                                HERE
                         </Link>
-                    </div>
-                }
-            </div>
-
+                        </div>
+                    }
+                </div>
+            </ErrorBoundary>
         </div>
     )
 }

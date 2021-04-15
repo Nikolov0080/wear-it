@@ -28,7 +28,7 @@ class PageRouter extends Component {
                 <GuestRoute exact path="/register" component={Register} />
                 <UserRoute path="/profile" component={Profile} />
                 <UserRoute exact path="/cart" component={Cart} />
-                <UserRoute exact path="/details/:productName/:productId" component={ProductDetails} />
+                <Route exact path="/details/:productName/:productId" component={ProductDetails} />
                 <Route exact path="*" component={ErrorPage} />
 
               </Switch>

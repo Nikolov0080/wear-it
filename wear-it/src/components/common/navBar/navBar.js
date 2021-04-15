@@ -5,6 +5,7 @@ import linksList from './linksList';
 import style from './css/navBar.module.css';
 import Context from '../../../context/Context';
 import CartIcon from '../../cart/cartIcon';
+import ErrorBoundary from '../../../errorBoundary/errorBoundary';
 
 const NavBar = () => {
 
@@ -17,15 +18,18 @@ const NavBar = () => {
     const [isAuth, setIsAuth] = useState(!!context.user);
 
     return (
-        <div className={style.navBox}>
-            <HomeLink />
-            {linksList(isAuth).map(({ name, path }, index) => {
-                return <NavLink key={index} name={name} path={path} />
-            })}
+        <ErrorBoundary err="nav bar">
 
-            {context.user !== null ? <CartIcon /> : ''}
+            <div className={style.navBox}>
+                <HomeLink />
+                {linksList(isAuth).map(({ name, path }, index) => {
+                    return <NavLink key={index} name={name} path={path} />
+                })}
 
-        </div>
+                {context.user !== null ? <CartIcon /> : ''}
+
+            </div>
+        </ErrorBoundary>
     )
 }
 

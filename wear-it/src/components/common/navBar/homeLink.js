@@ -6,6 +6,7 @@ const HomeLink = () => {
     return (
         <div className={style.homeBtn}>
             <NavLink name="Home" path="/" />
+            {/* { new Error('sdkfj')} */}
         </div>
     )
 }

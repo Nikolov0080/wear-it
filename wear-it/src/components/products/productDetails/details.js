@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import allProductsJSON from '../allProductsJSON';
 import getRandomProducts from '../../../utils/getRandomProducts';
 import style from './css/details.module.css';
@@ -8,10 +8,11 @@ import pureToken from '../../../utils/pureToken';
 import ErrMessage from '../../common/errMessage';
 import Size from './size';
 import { useHistory } from 'react-router-dom';
+import Context from '../../../context/Context';
 
 const Details = ({ product, foo }) => { // foo === set current Product
+    const context = useContext(Context);
     const history = useHistory();
-
     const [size, setSize] = useState('');
     const [err, setErr] = useState(false);
 
@@ -53,8 +54,11 @@ const Details = ({ product, foo }) => { // foo === set current Product
                     <Size foo={setSize} />
 
                     <p className={style.prodPrice}>{product.price} usd</p>
+                    {!context.user ?
+                        <h3>You must be logged in to make an order</h3>
+                        : <div className={style.btn} onClick={() => add(product)}>Add to cart</div>
+                    }
 
-                    <div className={style.btn} onClick={() => add(product)}>Add to cart</div>
                 </div>
             </div>
             <div className={style.randomProds}>

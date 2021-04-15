@@ -7,13 +7,15 @@ const CartItem = ({ item, token, update }) => {
 
 
     const complete = () => {
-        completeOrder(item._id, token).then(console.log)
-        update(val => val + 2)
+        completeOrder(item._id, token).then((resp) => {
+            update(val => val + 2);
+        })
     }
 
     const deleteOne = () => {
-        deleteOrder(item._id, token).then(console.log)
-        update(val => val + 2)
+        deleteOrder(item._id, token).then((resp) => {
+            update(val => val + 2);
+        })
     }
 
     return (
