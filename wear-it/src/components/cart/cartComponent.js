@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import completeOrder from '../../controllers/orders/completeOrder';
-import deleteOrder from '../../controllers/orders/deleteOrder';
 import getCart from '../../controllers/cart/getCart';
 import pureToken from '../../utils/pureToken';
 import CartItem from './cartItem';
@@ -62,8 +60,8 @@ const CartComponent = (props) => {
                 {/* FIX THIS WITH WELL STYLED COMPONENT! */}
                 {cart.map((item, index) => {
                     return <CartItem key={index} item={item}
-                        completeOrder={completeOrder}
-                        deleteOrder={deleteOrder} />
+                                            token={token}
+                        />
                 })}
             </div>
             <div className={style.total}>

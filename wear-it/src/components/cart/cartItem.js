@@ -1,7 +1,19 @@
 import React from 'react'
 import style from './css/cartItem.module.css';
+import completeOrder from '../../controllers/orders/completeOrder';
+import deleteOrder from '../../controllers/orders/deleteOrder';
 
-const CartItem = ({ item, completeOrder, deleteOrder }) => {
+const CartItem = ({ item, token }) => {
+
+
+    const complete = () => {
+        completeOrder(item._id, token).then(console.log)
+    }
+
+    const deleteOne = () => {
+        deleteOrder(item._id, token).then(console.log)
+    }
+
     return (
         <div className={style.box}>
             <img className={style.image} src={item.imageURL} alt='clothes' />
@@ -13,8 +25,8 @@ const CartItem = ({ item, completeOrder, deleteOrder }) => {
 
             {/* buttons below */}
             <div className={style.btnGroup}>
-                <div onClick={() => completeOrder(item._id)} className={style.orderBtn}>Order</div>
-                <div onClick={() => deleteOrder(item._id)} className={style.deleteBtn}>Remove</div>
+                <div onClick={() => complete()} className={style.orderBtn}>Order</div>
+                <div onClick={() => deleteOne()} className={style.deleteBtn}>Remove</div>
             </div>
         </div>
     )
