@@ -1,6 +1,23 @@
 .infoBox {
     text-align: center;
-    box-shadow: 2px 3px 18px 2px lightgray;
     width: 42%;
     float: left;
+}
+
+.innerBox {
+    box-shadow: 2px 3px 18px 2px lightgray;
+    letter-spacing: 2px;
+    line-height: 3rem;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    font-size: 20px;
+    margin: 2% 0% 10% 0%;
+    display: inline-table;
+}
+
+.title{
+    text-align: center;
+    text-transform: uppercase;
 }

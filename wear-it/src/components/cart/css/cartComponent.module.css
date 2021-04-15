@@ -39,8 +39,8 @@
 .deleteBtn, .orderBtn {
     margin: auto;
     cursor: pointer;
-    margin-top: 6%;
-    padding: 4%;
+    margin-top: 3%;
+    padding: 3%;
     color: #fff;
     text-align: center;
     text-transform: uppercase;

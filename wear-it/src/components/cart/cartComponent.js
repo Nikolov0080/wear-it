@@ -41,7 +41,7 @@ const CartComponent = (props) => {
 
 
     const completeAll = () => {
-        completeAllOrders( token).then((resp) => {
+        completeAllOrders(token).then((resp) => {
             console.log(resp);
             setUpdate(val => val + 2);
         })
@@ -57,15 +57,6 @@ const CartComponent = (props) => {
         return (
             <div>
                 ... loading
-                {/* FIX THIS WITH WELL STYLED COMPONENT! */}
-            </div>
-        )
-    }
-
-    if (cart === []) {
-        return (
-            <div>
-                cart empty
                 {/* FIX THIS WITH WELL STYLED COMPONENT! */}
             </div>
         )
