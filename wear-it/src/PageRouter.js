@@ -8,6 +8,9 @@ import Profile from './pages/profile';
 import Cart from './pages/cart';
 import ProductDetails from './pages/productDetails';
 import UserContext from './context/UserContext';
+import GuestRoute from './protectedRoutes/guestRoute';
+import UserRoute from './protectedRoutes/userRoute';
+
 
 class PageRouter extends Component {
 
@@ -20,11 +23,11 @@ class PageRouter extends Component {
               <Switch>
 
                 <Route exact path="/" component={Home} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/register" component={Register} />
-                <Route exact path="/profile" component={Profile} />
-                <Route exact path="/cart" component={Cart} />
-                <Route exact path="/details/:productName/:productId" component={ProductDetails} />
+                <GuestRoute exact path="/login" component={Login} />
+                <GuestRoute exact path="/register" component={Register} />
+                <UserRoute path="/profile" component={Profile} />
+                <UserRoute exact path="/cart" component={Cart} />
+                <UserRoute exact path="/details/:productName/:productId" component={ProductDetails} />
 
               </Switch>
             </Layout>

@@ -53,11 +53,11 @@ const CartComponent = (props) => {
             setUpdate(val => val + 2);
         })
     }
+
     if (cart === "empty") {
         return (
             <div>
                 ... loading
-                {/* FIX THIS WITH WELL STYLED COMPONENT! */}
             </div>
         )
     }

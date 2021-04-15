@@ -54,11 +54,14 @@ export class UserContext extends Component {
 
     }
 
-    logOut = () => {
-        this.setState({
-            user: null, 
+    logOut = async () => {
+       document.cookie = "auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+         await this.setState({
+            user: null,
             cart: null
         });
+
+        return 'x'
     }
 
     setCategory = (category) => {

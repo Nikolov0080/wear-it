@@ -1,6 +1,7 @@
 .linkBtn {
     text-decoration: none;
-    color: rgb(13, 175, 230);
+    font-weight: 700;
+    color: rgb(3, 108, 143);
 }
 
 .btn {
@@ -18,5 +19,5 @@
     border-radius: 20px;
     border: 3px rgb(45, 174, 224) solid;
     background: rgb(242, 249, 250);
-    color: rgb(10, 77, 99);
+    color: rgb(4, 67, 88);
 }

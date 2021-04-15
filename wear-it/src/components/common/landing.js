@@ -15,11 +15,9 @@ const Landing = ({ user }) => {
                     <div>
                         <div className={style.pageInfo}>
 
-                            {/* 
-           ADD LINK TO CART
-           ADD LINK TO PROFILE
-           ADD A NICE WELCOMING MESSAGE
-                */}
+                            <LinkButton path="/cart" value="Cart" />
+                            <br/>
+                            <LinkButton path="/profile" value="Profile" />
 
                         </div>
 

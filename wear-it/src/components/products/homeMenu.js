@@ -19,7 +19,7 @@ const HomeMenu = ({ currentCategory }) => {
         context.setCategory(type);
     }
 
-// throw new Error('Test Error');
+    // throw new Error('Test Error');
 
     return (
         <div>
@@ -28,7 +28,7 @@ const HomeMenu = ({ currentCategory }) => {
                 <Landing user={context.user} />
 
                 <div className={style.menuItemsBox}>
-                    {categories.map(({ type ,image}, index) => {
+                    {categories.map(({ type, image }, index) => {
                         const className = type === context.currentCategory ? 'active' : 'inactive';
                         return <MenuItem key={index} className={className} index={index} type={type} image={image} foo={changeStyle} />
                     })}
