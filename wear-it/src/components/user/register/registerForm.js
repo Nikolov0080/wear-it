@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react'
-import style from './css/registerForm.module.css';
-import AuthButton from './btn';
-import registerValidator from '../../validations/user/registerValidator';
-import ErrMessage from '../common/errMessage';
-import Input from './input';
-import registerController from '../../controllers/user/register';
-import Context from '../../context/Context';
-import ErrorBoundary from '../../errorBoundary/errorBoundary';
+import style from './registerForm.module.css';
+import AuthButton from '../btn/btn';
+import registerValidator from '../../../validations/user/registerValidator';
+import ErrMessage from '../../common/errMessage/errMessage';
+import Input from '../input/input';
+import registerController from '../../../controllers/user/register';
+import Context from '../../../context/Context';
+import ErrorBoundary from '../../../errorBoundary/errorBoundary';
 
 const RegisterForm = () => {
 

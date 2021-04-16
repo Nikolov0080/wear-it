@@ -2,10 +2,10 @@ import React, { useState, useEffect, useContext } from 'react'
 import allProductsJSON from '../allProductsJSON';
 import getRandomProducts from '../../../utils/getRandomProducts';
 import style from './css/details.module.css';
-import SingleProduct from '../singleProduct';
+import SingleProduct from '../singleProduct/singleProduct';
 import addToCart from '../../../controllers/cart/addToCart';
 import pureToken from '../../../utils/pureToken';
-import ErrMessage from '../../common/errMessage';
+import ErrMessage from '../../common/errMessage/errMessage';
 import Size from './size';
 import Context from '../../../context/Context';
 import ErrorBoundary from '../../../errorBoundary/errorBoundary';

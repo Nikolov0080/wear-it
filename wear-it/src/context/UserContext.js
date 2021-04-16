@@ -3,7 +3,7 @@ import Context from './Context';
 import getToken from '../utils/getToken';
 import pureToken from '../utils/pureToken';
 import getCart from '../controllers/cart/getCart';
-import Loading from '../components/common/loading';
+import Loading from '../components/common/loading/loading';
 
 export class UserContext extends Component {
 

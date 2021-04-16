@@ -1,6 +1,6 @@
 import React from 'react';
-import NavLink from './navLink';
-import style from './css/homeLink.module.css';
+import NavLink from '../navLink/navLink';
+import style from './homeLink.module.css';
 
 const HomeLink = () => {
     return (

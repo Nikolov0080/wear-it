@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import RegisterForm from '../components/user/registerForm'
+import RegisterForm from '../components/user/register/registerForm'
 import ErrorBoundary from '../errorBoundary/errorBoundary';
 
 export class Register extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import HomeMenu from '../components/products/homeMenu';
+import HomeMenu from '../components/products/homeMenu/homeMenu';
 import style from './css/homePage.module.css';
-import ProductsList from '../components/products/productsList';
+import ProductsList from '../components/products/productsList/productsList';
 import Context from '../context/Context';
 import ErrorBoundary from '../errorBoundary/errorBoundary';
 

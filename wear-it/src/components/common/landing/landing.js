@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import ErrorBoundary from '../../errorBoundary/errorBoundary';
-import style from './css/landing.module.css';
-import LinkButton from './navBar/linkButton';
+import ErrorBoundary from '../../../errorBoundary/errorBoundary';
+import style from './landing.module.css';
+import LinkButton from '../navBar/linkButton/linkButton';
 
 const Landing = ({ user }) => {
 

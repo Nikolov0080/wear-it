@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import ErrorBoundary from '../../errorBoundary/errorBoundary';
-import AddBtn from './addBtn';
-import style from './css/singleProduct.module.css';
+import ErrorBoundary from '../../../errorBoundary/errorBoundary';
+import AddBtn from '../addBtn/addBtn';
+import style from './singleProduct.module.css';
 
 const SingleProduct = ({ name, imageURL, price, id }) => {// price type name imageURL id
 

@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
-import Context from '../../context/Context';
-import SingleProduct from './singleProduct';
-import allProductsJSON from './allProductsJSON';
-import style from "./css/productsList.module.css";
-import ErrorBoundary from '../../errorBoundary/errorBoundary';
+import Context from '../../../context/Context';
+import SingleProduct from '../singleProduct/singleProduct';
+import allProductsJSON from '../allProductsJSON';
+import style from "./productsList.module.css";
+import ErrorBoundary from '../../../errorBoundary/errorBoundary';
 
 const ProductsList = () => {
 

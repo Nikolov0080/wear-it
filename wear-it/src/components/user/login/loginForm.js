@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react'
-import AuthButton from './btn';
-import Input from './input';
-import loginValidator from '../../validations/user/loginValidator';
-import ErrMessage from '../common/errMessage';
-import style from './css/loginForm.module.css';
-import { loginController } from '../../controllers/user/login';
-import Context from '../../context/Context';
+import AuthButton from '../btn/btn';
+import Input from '../input/input';
+import loginValidator from '../../../validations/user/loginValidator';
+import ErrMessage from '../../common/errMessage/errMessage';
+import style from './loginForm.module.css';
+import { loginController } from '../../../controllers/user/login';
+import Context from '../../../context/Context';
 import { useHistory } from 'react-router-dom';
-import ErrorBoundary from '../../errorBoundary/errorBoundary';
+import ErrorBoundary from '../../../errorBoundary/errorBoundary';
 
 const LoginForm = () => {
 

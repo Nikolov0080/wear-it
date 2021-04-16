@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './css/input.module.css';
+import style from './input.module.css';
 
 const Input = ({ type, name, placeholder, foo }) => {// add error here as PROP
 

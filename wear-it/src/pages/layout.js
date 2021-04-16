@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Footer from '../components/common/footer';
+import Footer from '../components/common/footer/footer';
 import NavBar from '../components/common/navBar/navBar';
 import ErrorBoundary from '../errorBoundary/errorBoundary';
 import style from './css/layout.module.css';

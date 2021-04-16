@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import Context from '../../context/Context';
-import MenuItem from './menuItem';
-import style from './css/homeMenu.module.css';
-import Landing from '../common/landing';
-import ErrorBoundary from '../../errorBoundary/errorBoundary';
+import Context from '../../../context/Context';
+import MenuItem from '../menuItem/menuItem';
+import style from './homeMenu.module.css';
+import Landing from '../../common/landing/landing';
+import ErrorBoundary from '../../../errorBoundary/errorBoundary';
 
 const HomeMenu = ({ currentCategory }) => {
 

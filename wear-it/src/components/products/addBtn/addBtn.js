@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './css/addBtn.module.css';
+import style from './addBtn.module.css';
 import { Link } from 'react-router-dom';
 
 const AddBtn = ({ title, path, auth, foo }) => { // foo === add to cart function

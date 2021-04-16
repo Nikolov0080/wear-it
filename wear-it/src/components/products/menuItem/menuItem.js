@@ -1,6 +1,6 @@
 import React from 'react'
-import ErrorBoundary from '../../errorBoundary/errorBoundary';
-import style from './css/menuItem.module.css';
+import ErrorBoundary from '../../../errorBoundary/errorBoundary';
+import style from './menuItem.module.css';
 
 const MenuItem = ({ className, index, type, image, foo }) => { // foo === changeStyle function from parent component
     return (

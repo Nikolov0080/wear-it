@@ -7,7 +7,7 @@ import pureToken from '../../utils/pureToken';
 import CartItem from './cartItem';
 import { Link } from 'react-router-dom';
 import style from './css/cartComponent.module.css';
-import Loading from '../common/loading';
+import Loading from '../common/loading/loading';
 import Context from '../../context/Context';
 
 const CartComponent = (props) => {
@@ -22,7 +22,7 @@ const CartComponent = (props) => {
         console.log(context.currentCart())
         if(context.currentCart() !== null){
             setCart(context.currentCart())
-        }
+        }// eslint-disable-next-line
     },[update])
 
     pureToken().then((resp) => {

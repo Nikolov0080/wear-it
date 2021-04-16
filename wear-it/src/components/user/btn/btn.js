@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './css/btn.module.css';
+import style from './btn.module.css';
 
 const AuthButton = ({ value }) => {
     return (

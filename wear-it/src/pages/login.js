@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import LoginForm from '../components/user/loginForm'
+import LoginForm from '../components/user/login/loginForm'
 import ErrorBoundary from '../errorBoundary/errorBoundary';
 
 export class Login extends Component {

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import HomeLink from './homeLink';
-import NavLink from './navLink';
-import linksList from './linksList';
-import style from './css/navBar.module.css';
+import HomeLink from './homeLink/homeLink';
+import NavLink from './navLink/navLink';
+import linksList from './homeLink/linksList';
+import style from './navBar.module.css';
 import Context from '../../../context/Context';
 import CartIcon from '../../cart/cartIcon';
 import ErrorBoundary from '../../../errorBoundary/errorBoundary';

@@ -4,7 +4,7 @@ import style from './css/profile.module.css';
 import UserStats from './userStats';
 import pureToken from '../../../utils/pureToken';
 import completedOrders from '../../../controllers/orders/completedOrders';
-import Loading from '../../common/loading';
+import Loading from '../../common/loading/loading';
 
 const UserProfile = () => {
 
