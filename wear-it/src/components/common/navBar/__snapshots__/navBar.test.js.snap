@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Nav Bar 1`] = `
+<div
+  className="navBox"
+>
+  <div
+    className="homeBtn"
+  >
+    <div
+      className="box"
+    >
+      <a
+        className="linkBtn"
+        href="/"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+    </div>
+  </div>
+  <div
+    className="box"
+  >
+    <a
+      className="linkBtn"
+      href="/login"
+      onClick={[Function]}
+    >
+      Login
+    </a>
+  </div>
+  <div
+    className="box"
+  >
+    <a
+      className="linkBtn"
+      href="/register"
+      onClick={[Function]}
+    >
+      Register
+    </a>
+  </div>
+  
+</div>
+`;

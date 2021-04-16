@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Error Message 1`] = `
+<div
+  className="errBox"
+>
+  <p>
+    test message
+  </p>
+</div>
+`;

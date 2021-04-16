@@ -10,7 +10,7 @@ import style from './css/cartComponent.module.css';
 import Loading from '../common/loading/loading';
 import Context from '../../context/Context';
 
-const CartComponent = (props) => {
+const CartComponent = () => {
 
     const context = useContext(Context);
     const [token, setToken] = useState();

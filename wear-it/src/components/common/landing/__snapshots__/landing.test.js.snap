@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Landing 1`] = `
+<div
+  className="pageInfo"
+>
+  <div>
+    <div>
+      <h1>
+        Welcome to 
+        <i>
+          wear-it
+        </i>
+         
+        <br />
+         e-commerce 
+      </h1>
+      <span>
+        You can select category from the menu below, but you can
+        <span
+          className="spanSpecial"
+        >
+           Add to cart 
+        </span>
+        and
+        <span
+          className="spanSpecial"
+        >
+           order 
+        </span>
+        products only if you are registered user!
+      </span>
+      <br />
+      <div
+        className="authBox"
+      >
+        <a
+          className="linkBtn"
+          href="/login"
+          onClick={[Function]}
+        >
+          <div
+            className="btn"
+          >
+            Login
+          </div>
+        </a>
+        <br />
+        <a
+          className="linkBtn"
+          href="/register"
+          onClick={[Function]}
+        >
+          <div
+            className="btn"
+          >
+            Register
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

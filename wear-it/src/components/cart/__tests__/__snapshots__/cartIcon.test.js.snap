@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Cart Item 1`] = `
+<div
+  className="cartBox"
+>
+  <a
+    href="/cart"
+    onClick={[Function]}
+  >
+    <img
+      alt="cart"
+      className="cart"
+      src="cartImage.png"
+    />
+  </a>
+  <div
+    className="cartLabel"
+  >
+    my cart
+  </div>
+  <div
+    className="cartItems"
+  >
+    5
+  </div>
+</div>
+`;

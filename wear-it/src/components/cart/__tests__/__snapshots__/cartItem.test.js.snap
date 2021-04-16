@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Cart Item 1`] = `
+<div
+  className="box"
+>
+  <img
+    alt="clothes"
+    className="image"
+    src="testImageUrl"
+  />
+  <div
+    className="details"
+  >
+    <div
+      className="info"
+    >
+      Name: 
+      name
+    </div>
+    <div
+      className="info"
+    >
+      Price: 
+      40
+       USD
+    </div>
+    <div
+      className="info"
+    >
+      Size: 
+      XL
+    </div>
+  </div>
+  <div
+    className="btnGroup"
+  >
+    <div
+      className="orderBtn"
+      onClick={[Function]}
+    >
+      Order
+    </div>
+    <div
+      className="deleteBtn"
+      onClick={[Function]}
+    >
+      Remove
+    </div>
+  </div>
+</div>
+`;

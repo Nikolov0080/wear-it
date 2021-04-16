@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Nav Link 1`] = `
+<div
+  className="box"
+>
+  <a
+    className="linkBtn"
+    href=""
+    onClick={[Function]}
+  />
+</div>
+`;
