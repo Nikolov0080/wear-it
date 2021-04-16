@@ -17,6 +17,7 @@ Front-end: React
 - libraries used:  
  **jsonwebtoken**   
  **react-router-dom**
+ **jest**
 
 Back-end: Express API sing MongoDB
 - functionality used:  
