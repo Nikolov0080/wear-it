@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Single Product 1`] = `
+<div>
+  <div
+    className="card"
+  >
+    <a
+      href="/details/prodName/_lkedf+fdpo"
+      onClick={[Function]}
+    >
+      <img
+        alt="product"
+        className="image"
+        src="klfsdkfjlsdf45345lkjlsdk"
+      />
+    </a>
+    <div
+      className="productInfo"
+    >
+      <h4
+        className="productName"
+      >
+        prodName
+      </h4>
+      <h3
+        className="productPrice"
+      >
+        404598
+         USD
+      </h3>
+    </div>
+    <div>
+      <a
+        className="link"
+        href="/details/prodName/_lkedf+fdpo"
+        onClick={[Function]}
+      >
+        <div
+          as="div"
+          className="add"
+        >
+          details
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;

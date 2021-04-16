@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Order 1`] = `
+<div>
+  <div
+    className="orderBox"
+  >
+    <img
+      alt="product"
+      className="image"
+      src="fkjgsdh"
+    />
+    <div
+      className="productName"
+    >
+      Product name:  
+      meow
+    </div>
+    <div
+      className="size"
+    >
+      Size: 
+      XXXXXXXlsd
+    </div>
+    <div
+      className="price"
+    >
+      Price: 
+      45
+       USD
+    </div>
+  </div>
+</div>
+`;

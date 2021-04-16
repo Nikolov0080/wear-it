@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Menu Item 1`] = `
+<div>
+  <div
+    className="categoryBox"
+    onClick={[Function]}
+  >
+    <div
+      className="leftBoxCategory"
+    >
+      <div
+        className="active"
+      >
+        good
+      </div>
+    </div>
+    <div
+      className="rightBoxImage"
+    >
+      <img
+        alt="category source"
+        className="image"
+        src="ho ho ho test"
+      />
+    </div>
+  </div>
+</div>
+`;

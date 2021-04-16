@@ -1,11 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import LinkButton from './linkButton';
+import ProductsList from './productsList';
 import { BrowserRouter } from 'react-router-dom';
 
-it('renders correctly Loading', () => {
+it('renders correctly Product List', () => {
     const tree = renderer
-        .create(<BrowserRouter><LinkButton path='/da' value='dssd' /></BrowserRouter>)
+        .create(<BrowserRouter><ProductsList /></BrowserRouter>)
         .toJSON();
     expect(tree).toMatchSnapshot();
 });

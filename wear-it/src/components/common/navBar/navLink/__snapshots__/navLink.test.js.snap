@@ -6,7 +6,7 @@ exports[`renders correctly Nav Link 1`] = `
 >
   <a
     className="linkBtn"
-    href=""
+    href="/lala"
     onClick={[Function]}
   />
 </div>

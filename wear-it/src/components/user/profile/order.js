@@ -1,14 +1,14 @@
 import React from 'react'
 import style from './css/order.module.css';
 
-const Order = (data) => {
+const Order = ({ data }) => {
 
     const {
         imageURL,
         price,
         productName,
         size,
-    } = data.data
+    } = data
     return (
         <div>
             <div className={style.orderBox}>

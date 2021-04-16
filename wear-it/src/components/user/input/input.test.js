@@ -1,11 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import LinkButton from './linkButton';
+import Input from './input';
 import { BrowserRouter } from 'react-router-dom';
 
-it('renders correctly Loading', () => {
+it('renders correctly Input', () => {
     const tree = renderer
-        .create(<BrowserRouter><LinkButton path='/da' value='dssd' /></BrowserRouter>)
+        .create(<BrowserRouter><Input 
+            type="text" name='test' placeholder="meow"
+            /></BrowserRouter>)
         .toJSON();
     expect(tree).toMatchSnapshot();
 });

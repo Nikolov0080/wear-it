@@ -1,13 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly Link Button 1`] = `
+exports[`renders correctly Loading 1`] = `
 <a
   className="linkBtn"
-  href=""
+  href="/da"
   onClick={[Function]}
 >
   <div
     className="btn"
-  />
+  >
+    dssd
+  </div>
 </a>
 `;

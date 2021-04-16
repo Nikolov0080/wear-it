@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Auth Button 1`] = `
+<div>
+  <button
+    className="btn"
+    type="submit"
+  />
+</div>
+`;

@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Home Menu 1`] = `
+<div>
+  <div>
+    <div
+      className="pageInfo"
+    >
+      <div>
+        <div>
+          <h1>
+            Welcome to 
+            <i>
+              wear-it
+            </i>
+             
+            <br />
+             e-commerce 
+          </h1>
+          <span>
+            You can select category from the menu below, but you can
+            <span
+              className="spanSpecial"
+            >
+               Add to cart 
+            </span>
+            and
+            <span
+              className="spanSpecial"
+            >
+               order 
+            </span>
+            products only if you are registered user!
+          </span>
+          <br />
+          <div
+            className="authBox"
+          >
+            <a
+              className="linkBtn"
+              href="/login"
+              onClick={[Function]}
+            >
+              <div
+                className="btn"
+              >
+                Login
+              </div>
+            </a>
+            <br />
+            <a
+              className="linkBtn"
+              href="/register"
+              onClick={[Function]}
+            >
+              <div
+                className="btn"
+              >
+                Register
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="menuItemsBox"
+    >
+      <div>
+        <div
+          className="categoryBox"
+          onClick={[Function]}
+        >
+          <div
+            className="leftBoxCategory"
+          >
+            <div
+              className="inactive"
+            >
+              Hats
+            </div>
+          </div>
+          <div
+            className="rightBoxImage"
+          >
+            <img
+              alt="category source"
+              className="image"
+              src="https://res.cloudinary.com/recepsbg/image/upload/v1617635376/vECTORS/hat2_sirpfj.png"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="categoryBox"
+          onClick={[Function]}
+        >
+          <div
+            className="leftBoxCategory"
+          >
+            <div
+              className="inactive"
+            >
+              Jeans
+            </div>
+          </div>
+          <div
+            className="rightBoxImage"
+          >
+            <img
+              alt="category source"
+              className="image"
+              src="https://res.cloudinary.com/recepsbg/image/upload/v1617635376/vECTORS/jeans1_j4su6t.png"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="categoryBox"
+          onClick={[Function]}
+        >
+          <div
+            className="leftBoxCategory"
+          >
+            <div
+              className="inactive"
+            >
+              Shirts
+            </div>
+          </div>
+          <div
+            className="rightBoxImage"
+          >
+            <img
+              alt="category source"
+              className="image"
+              src="https://res.cloudinary.com/recepsbg/image/upload/v1617635376/vECTORS/shirt2_ajmris.png"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="categoryBox"
+          onClick={[Function]}
+        >
+          <div
+            className="leftBoxCategory"
+          >
+            <div
+              className="inactive"
+            >
+              Jackets
+            </div>
+          </div>
+          <div
+            className="rightBoxImage"
+          >
+            <img
+              alt="category source"
+              className="image"
+              src="https://res.cloudinary.com/recepsbg/image/upload/v1617635376/vECTORS/jacket2_lkxfdt.png"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

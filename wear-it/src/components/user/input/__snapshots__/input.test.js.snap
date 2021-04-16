@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Input 1`] = `
+<div>
+  <input
+    autoComplete="off"
+    className="input"
+    name="test"
+    onChange={[Function]}
+    placeholder="meow"
+    type="text"
+  />
+</div>
+`;

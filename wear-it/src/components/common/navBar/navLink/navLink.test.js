@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 it('renders correctly Nav Link', () => {
     const tree = renderer
-        .create(<BrowserRouter><NavLink /></BrowserRouter>)
+        .create(<BrowserRouter><NavLink path="/lala" /></BrowserRouter>)
         .toJSON();
     expect(tree).toMatchSnapshot();
 });

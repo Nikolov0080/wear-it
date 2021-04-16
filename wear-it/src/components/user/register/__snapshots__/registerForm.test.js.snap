@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Register 1`] = `
+<div
+  className="box"
+>
+  <div
+    className="registerForm"
+    onChange={[Function]}
+  >
+    <h2
+      className="title"
+    >
+      REGISTER
+    </h2>
+    
+    <form
+      onSubmit={[Function]}
+    >
+      <div>
+        <input
+          autoComplete="off"
+          className="input"
+          name="username"
+          onChange={[Function]}
+          placeholder="Username"
+          type="text"
+        />
+      </div>
+      <div>
+        <input
+          autoComplete="off"
+          className="input"
+          name="email"
+          onChange={[Function]}
+          placeholder="Email"
+          type="email"
+        />
+      </div>
+      <div>
+        <input
+          autoComplete="off"
+          className="input"
+          name="password"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+        />
+      </div>
+      <div>
+        <input
+          autoComplete="off"
+          className="input"
+          name="rePassword"
+          onChange={[Function]}
+          placeholder="Repeat Password"
+          type="password"
+        />
+      </div>
+      <div>
+        <button
+          className="btn"
+          type="submit"
+        >
+          submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
