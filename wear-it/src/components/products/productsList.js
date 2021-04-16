@@ -3,6 +3,7 @@ import Context from '../../context/Context';
 import SingleProduct from './singleProduct';
 import allProductsJSON from './allProductsJSON';
 import style from "./css/productsList.module.css";
+import ErrorBoundary from '../../errorBoundary/errorBoundary';
 
 const ProductsList = () => {
 
@@ -30,13 +31,16 @@ const ProductsList = () => {
 
     return (
         <div className={style.box}>
-            {currentProducts.map(({ id, imageURL, name, price }, index) => {
+            <ErrorBoundary err="product list">
+               
+                {currentProducts.map(({ id, imageURL, name, price }, index) => {
+                    return (
+                        <SingleProduct key={id.slice(0, 5) + index} imageURL={imageURL} id={id} name={name} price={price} />
+                    )
 
-                return (
-                    <SingleProduct key={id.slice(0, 5) + index} imageURL={imageURL} id={id} name={name} price={price} />
-                )
+                })}
+            </ErrorBoundary>
 
-            })}
         </div>
     )
 }

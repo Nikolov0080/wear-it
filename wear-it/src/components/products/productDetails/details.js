@@ -9,6 +9,7 @@ import ErrMessage from '../../common/errMessage';
 import Size from './size';
 import { useHistory } from 'react-router-dom';
 import Context from '../../../context/Context';
+import ErrorBoundary from '../../../errorBoundary/errorBoundary';
 
 const Details = ({ product, foo }) => { // foo === set current Product
     const context = useContext(Context);
@@ -42,37 +43,42 @@ const Details = ({ product, foo }) => { // foo === set current Product
 
     return (
         <div>
-            <div className={style.detailsBox}>
+            <ErrorBoundary err="details page">
+                <div className={style.detailsBox}>
 
-                <div className={style.productImage}>
-                    <img className={style.image} src={product.imageURL} alt="product" />
+                    <div className={style.productImage}>
+                        <img className={style.image} src={product.imageURL} alt="product" />
+                    </div>
+                    <div className={style.productInfo}>
+                        {err !== false ? <ErrMessage err={err} /> : ''}
+                        <h2 className={style.prodName}>{product.name}</h2>
+                        
+                        {context.user
+                            ?
+                            <Size foo={setSize} />
+                            : ''
+                        }
+
+                        <p className={style.prodPrice}>{product.price} usd</p>
+                        {!context.user?
+                            <h3>You must be logged in to make an order</h3>
+                            : <div className={style.btn} onClick={() => add(product)}>Add to cart</div>
+                        }
+
+                    </div>
                 </div>
-                <div className={style.productInfo}>
-                    {err !== false ? <ErrMessage err={err} /> : ''}
-                    <h2 className={style.prodName}>{product.name}</h2>
-
-                    <Size foo={setSize} />
-
-                    <p className={style.prodPrice}>{product.price} usd</p>
-                    {!context.user ?
-                        <h3>You must be logged in to make an order</h3>
-                        : <div className={style.btn} onClick={() => add(product)}>Add to cart</div>
-                    }
-
+                <div className={style.randomProds}>
+                    <h2 className={style.prodsTitle}>You may also like</h2>
+                    {getRandomProducts(allProductsJSON, 3).map(({ price, imageURL, id, name }, index) => {
+                        return (
+                            <div className={style.prod} onClick={() => foo(id)} key={id.slice(0, 5)} >
+                                <SingleProduct imageURL={imageURL} name={name} price={price} id={id} />
+                            </div>
+                        )
+                    })}
                 </div>
-            </div>
-            <div className={style.randomProds}>
-                <h2 className={style.prodsTitle}>You may also like</h2>
-                {getRandomProducts(allProductsJSON, 3).map(({ price, imageURL, id, name }, index) => {
-                    return (
-                        <div className={style.prod} onClick={() => foo(id)} key={id.slice(0, 5)} >
-                            <SingleProduct imageURL={imageURL} name={name} price={price} id={id} />
-                        </div>
-                    )
-                })}
-            </div>
+            </ErrorBoundary>
         </div>
-
     )
 }
 

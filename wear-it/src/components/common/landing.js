@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ErrorBoundary from '../../errorBoundary/errorBoundary';
 import style from './css/landing.module.css';
 import LinkButton from './navBar/linkButton';
@@ -7,14 +7,22 @@ const Landing = ({ user }) => {
 
     const userBool = !!user;
 
+    const [username, setUsername] = useState(null)
+
+    useEffect(() => {
+        if (user) {
+            setUsername(user.username || user.user.username);
+        }
+    }, [user]);
+
     return (
         <ErrorBoundary err="landing at home page">
             <div className={style.pageInfo}>
                 {
                     userBool !== false
-
                         ?
                         <div>
+                            <h1>Welcome <span className={style.username}>{username}</span></h1>
                             <div className={style.pageInfo}>
                                 <LinkButton path="/cart" value="Cart" />
                                 <br />
@@ -44,20 +52,10 @@ const Landing = ({ user }) => {
                                 </div>
                             </div>
                         </div>
-
                 }
-
-
-
-
             </div>
         </ErrorBoundary>
-
     )
-
-
-
-
 }
 
 export default Landing

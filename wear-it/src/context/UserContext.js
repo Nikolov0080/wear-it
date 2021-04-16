@@ -3,6 +3,7 @@ import Context from './Context';
 import getToken from '../utils/getToken';
 import pureToken from '../utils/pureToken';
 import getCart from '../controllers/cart/getCart';
+import Loading from '../components/common/loading';
 
 export class UserContext extends Component {
 
@@ -55,8 +56,8 @@ export class UserContext extends Component {
     }
 
     logOut = async () => {
-       document.cookie = "auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-         await this.setState({
+        document.cookie = "auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        await this.setState({
             user: null,
             cart: null
         });
@@ -78,14 +79,14 @@ export class UserContext extends Component {
     render() {
 
         if (this.state.user !== '') {
-            // eslint-disable-next-line
-            this.state.loading = false;
+                // eslint-disable-next-line
+                this.state.loading = false;
         }
 
         if (this.state.loading) {
             return (
                 <div>
-                    ...loading
+                <Loading/>
                 </div>
             )
         }

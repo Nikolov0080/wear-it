@@ -7,6 +7,7 @@ import pureToken from '../../utils/pureToken';
 import CartItem from './cartItem';
 import { Link } from 'react-router-dom';
 import style from './css/cartComponent.module.css';
+import Loading from '../common/loading';
 
 const CartComponent = (props) => {
 
@@ -57,7 +58,7 @@ const CartComponent = (props) => {
     if (cart === "empty") {
         return (
             <div>
-                ... loading
+             <Loading/>
             </div>
         )
     }

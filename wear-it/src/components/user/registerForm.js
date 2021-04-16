@@ -6,6 +6,7 @@ import ErrMessage from '../common/errMessage';
 import Input from './input';
 import registerController from '../../controllers/user/register';
 import Context from '../../context/Context';
+import ErrorBoundary from '../../errorBoundary/errorBoundary';
 
 const RegisterForm = () => {
 
@@ -38,35 +39,38 @@ const RegisterForm = () => {
 
     return (
         <div className={style.box}>
-            <div onChange={(e) => check(e)} className={style.registerForm}>
-                <h2 className={style.title}>REGISTER</h2>
-                {err !== false ? <ErrMessage err={err} /> : ''}
-                <form onSubmit={(e) => handleSubmit(e)}>
+            <ErrorBoundary err="register page">
+                <div onChange={(e) => check(e)} className={style.registerForm}>
+                    <h2 className={style.title}>REGISTER</h2>
+                    {err !== false ? <ErrMessage err={err} /> : ''}
+                    <form onSubmit={(e) => handleSubmit(e)}>
+{/* {new Error('sdlkhf')} */}
+                        <Input name="username"
+                            placeholder="Username"
+                            type="text"
+                            foo={setUsername} />
 
-                    <Input name="username"
-                        placeholder="Username"
-                        type="text"
-                        foo={setUsername} />
+                        <Input name="email"
+                            placeholder="Email"
+                            type="email"
+                            foo={setEmail} />
 
-                    <Input name="email"
-                        placeholder="Email"
-                        type="email"
-                        foo={setEmail} />
+                        <Input name="password"
+                            placeholder="Password"
+                            type="password"
+                            foo={setPassword} />
 
-                    <Input name="password"
-                        placeholder="Password"
-                        type="password"
-                        foo={setPassword} />
+                        <Input name="rePassword"
+                            placeholder="Repeat Password"
+                            type="password"
+                            foo={setRePassword} />
 
-                    <Input name="rePassword"
-                        placeholder="Repeat Password"
-                        type="password"
-                        foo={setRePassword} />
+                        <AuthButton value="submit" />
 
-                    <AuthButton value="submit" />
+                    </form>
+                </div>
+            </ErrorBoundary>
 
-                </form>
-            </div>
         </div>
     )
 }

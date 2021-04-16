@@ -3,6 +3,7 @@ import Context from '../../context/Context';
 import MenuItem from './menuItem';
 import style from './css/homeMenu.module.css';
 import Landing from '../common/landing';
+import ErrorBoundary from '../../errorBoundary/errorBoundary';
 
 const HomeMenu = ({ currentCategory }) => {
 
@@ -23,18 +24,21 @@ const HomeMenu = ({ currentCategory }) => {
 
     return (
         <div>
-            <div>
+            <ErrorBoundary err="home menu">
+                <div>
 
-                <Landing user={context.user} />
+                    <Landing user={context.user} />
 
-                <div className={style.menuItemsBox}>
-                    {categories.map(({ type, image }, index) => {
-                        const className = type === context.currentCategory ? 'active' : 'inactive';
-                        return <MenuItem key={index} className={className} index={index} type={type} image={image} foo={changeStyle} />
-                    })}
+                    <div className={style.menuItemsBox}>
+                        {categories.map(({ type, image }, index) => {
+                            const className = type === context.currentCategory ? 'active' : 'inactive';
+                            return <MenuItem key={index} className={className} index={index} type={type} image={image} foo={changeStyle} />
+                        })}
+                    </div>
+
                 </div>
+            </ErrorBoundary>
 
-            </div>
         </div>
     )
 }
