@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import style from './css/cartIcon.module.css';
 import cartImage from './cartImage.png';
 import { Link } from 'react-router-dom';
 import getCart from '../../controllers/cart/getCart';
 import pureToken from '../../utils/pureToken';
+import Context from '../../context/Context';
 
 const CartIcon = (props) => {
 
     const [token, setToken] = useState();
     const [cart, setCart] = useState('empty');
+
+    const context = useContext(Context);
 
     pureToken().then((resp) => {
         if (resp) {
@@ -23,7 +26,7 @@ const CartIcon = (props) => {
                     setCart(resp);
                 })
         }
-    }, [token]);
+    }, [token, context]);
 
     return (
         <div className={style.cartBox}>

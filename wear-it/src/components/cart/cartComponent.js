@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import getCart from '../../controllers/cart/getCart';
 import deleteAllOrders from '../../controllers/orders/deleteAllOrders';
 import completeAllOrders from '../../controllers/orders/completeAllOrders';
@@ -8,13 +8,22 @@ import CartItem from './cartItem';
 import { Link } from 'react-router-dom';
 import style from './css/cartComponent.module.css';
 import Loading from '../common/loading';
+import Context from '../../context/Context';
 
 const CartComponent = (props) => {
 
+    const context = useContext(Context);
     const [token, setToken] = useState();
     const [cart, setCart] = useState('empty');
     const [total, setTotal] = useState(0);
     const [update, setUpdate] = useState(0);
+
+    useEffect(()=>{
+        console.log(context.currentCart())
+        if(context.currentCart() !== null){
+            setCart(context.currentCart())
+        }
+    },[update])
 
     pureToken().then((resp) => {
         if (resp) {
@@ -58,7 +67,7 @@ const CartComponent = (props) => {
     if (cart === "empty") {
         return (
             <div>
-             <Loading/>
+                <Loading />
             </div>
         )
     }

@@ -7,13 +7,11 @@ import addToCart from '../../../controllers/cart/addToCart';
 import pureToken from '../../../utils/pureToken';
 import ErrMessage from '../../common/errMessage';
 import Size from './size';
-import { useHistory } from 'react-router-dom';
 import Context from '../../../context/Context';
 import ErrorBoundary from '../../../errorBoundary/errorBoundary';
 
 const Details = ({ product, foo }) => { // foo === set current Product
     const context = useContext(Context);
-    const history = useHistory();
     const [size, setSize] = useState('');
     const [err, setErr] = useState(false);
 
@@ -29,7 +27,8 @@ const Details = ({ product, foo }) => { // foo === set current Product
                     imageURL: data.imageURL
                 }
                 addToCart(token, orderData).then(resp => {
-                    history.go(0)
+                    context.currentCart()
+                    console.log(23)
                 });
             })
         }

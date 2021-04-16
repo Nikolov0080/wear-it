@@ -26,20 +26,21 @@ export class UserContext extends Component {
         }
     }
 
-    componentDidUpdate() {
-        if (this.state.user !== null && this.state.cart === null) {
-            this.setCart();
-        }
-    }
+    // componentDidUpdate() {
+    //     if (this.state.user !== null && this.state.cart === null) {
+    //         this.setCart();
+    //     }
+    // }
 
     setCart = () => {
         pureToken().then((resp) => {
             if (resp) {
-                getCart(resp).then((resp) => {
-                    this.setState({
-                        cart: resp
+                getCart(resp)
+                    .then((resp) => {
+                        this.setState({
+                            cart: resp
+                        });
                     });
-                });
             } else {
                 this.setState({
                     cart: null
@@ -79,14 +80,14 @@ export class UserContext extends Component {
     render() {
 
         if (this.state.user !== '') {
-                // eslint-disable-next-line
-                this.state.loading = false;
+            // eslint-disable-next-line
+            this.state.loading = false;
         }
 
         if (this.state.loading) {
             return (
                 <div>
-                <Loading/>
+                    <Loading />
                 </div>
             )
         }
