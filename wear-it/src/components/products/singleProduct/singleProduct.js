@@ -21,7 +21,6 @@ const SingleProduct = ({ name, imageURL, price, id }) => {// price type name ima
                     <AddBtn title="details" path={`/details/${name}/${id}`} auth={false} />
                 </div>
             </ErrorBoundary>
-
         </div>
     )
 }
