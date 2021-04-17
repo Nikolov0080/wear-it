@@ -14,6 +14,7 @@ module.exports.login = (req, res) => {
 
     } else {
         userSchema.findOne({ username }).then(resp => {
+            
             if (resp) {
                 bcrypt.compare(password, resp.password, (err, result) => {
                     if (err) {
