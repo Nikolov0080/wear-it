@@ -26,12 +26,6 @@ export class UserContext extends Component {
         }
     }
 
-    // componentDidUpdate() {
-    //     if (this.state.user !== null && this.state.cart === null) {
-    //         this.setCart();
-    //     }
-    // }
-
     setCart = () => {
         pureToken().then((resp) => {
             if (resp) {
@@ -51,7 +45,7 @@ export class UserContext extends Component {
 
     login = (userData) => {
         this.setState({
-            user: userData,
+            user:userData
         });
 
     }

@@ -34,7 +34,7 @@ const UserStats = ({ orders }) => {
                     <br />
                     <div>Total product purchased: <b>{orders.length}</b> </div>
                     <br />
-                    <Address />
+                    <Address userData={context.user} />
                     <div onClick={() => logOut()} className={style.logout}>logout</div>
                 </div>
             </div>

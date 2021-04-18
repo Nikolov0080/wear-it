@@ -30,7 +30,8 @@ const LoginForm = () => {
                 if (resp.status === 202) {
                     return setErr(resp.data);
                 }else{
-                    context.login(resp);
+                    console.log(resp.user)
+                    context.login(resp.user);
                     history.push('/');
                 }
             })
