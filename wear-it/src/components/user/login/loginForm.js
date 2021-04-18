@@ -17,23 +17,24 @@ const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [err, setErr] = useState(false);
-    // set no user found as an error
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setErr(loginValidator(username, password))
 
-        if (loginValidator(username, password) === false) { // fix todo fix connection error issue
+        if (loginValidator(username, password) === false) { 
 
             loginController(username, password).then((resp) => {
-                console.log(resp)// fix todo fix connection error issue
+                
                 if (resp.status === 202) {
                     return setErr(resp.data);
+                }else{
+                    context.login(resp);
+                    history.push('/');
                 }
-                context.login(resp);
-            }).then(() => {
-                history.push('/');
             })
+         
         }
     }
 

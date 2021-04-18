@@ -21,7 +21,6 @@ export function loginController(username, password) {
         }
     })
         .catch((e) => {
-            
             if(e){
                 return {
                     status:202,
