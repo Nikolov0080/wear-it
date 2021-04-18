@@ -44,7 +44,6 @@ const RegisterForm = () => {
                     <h2 className={style.title}>REGISTER</h2>
                     {err !== false ? <ErrMessage err={err} /> : ''}
                     <form onSubmit={(e) => handleSubmit(e)}>
-{/* {new Error('sdlkhf')} */}
                         <Input name="username"
                             placeholder="Username"
                             type="text"

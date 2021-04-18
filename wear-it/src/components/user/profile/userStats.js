@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import Context from '../../../context/Context';
 import { useHistory } from 'react-router-dom';
 import style from './css/userStats.module.css';
+import Address from './address';
 const UserStats = ({ orders }) => {
 
     const context = useContext(Context)
@@ -33,6 +34,7 @@ const UserStats = ({ orders }) => {
                     <br />
                     <div>Total product purchased: <b>{orders.length}</b> </div>
                     <br />
+                    <Address />
                     <div onClick={() => logOut()} className={style.logout}>logout</div>
                 </div>
             </div>

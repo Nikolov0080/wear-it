@@ -7,6 +7,9 @@ const { login } = require('../../controllers/user/POST/login');
 const loginValidation = require('../../middlewares/validations/login');
 const registerValidation = require('../../middlewares/validations/register');
 const isGuest = require('../../middlewares/isGuest');
+const { address } = require("../../controllers/user/POST/address");
+const isLogged = require("../../middlewares/isLogged");
+const addressValidator = require('../../middlewares/validations/address');
 
 router.get('/orders', (req, res) => {
     res.send("orders test get");
@@ -29,5 +32,6 @@ router.post('/login', isGuest, loginValidation, login);
 
 router.post('/register', isGuest, registerValidation, register);
 
+router.post('/address', isLogged,addressValidator, address);
 
 module.exports = router;
