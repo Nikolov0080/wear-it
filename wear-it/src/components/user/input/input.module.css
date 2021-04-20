@@ -1,4 +1,4 @@
-.input {
+.input, .inputNumber {
     font-size: 25px;
     text-align: center;
     font-weight: 200;
@@ -11,7 +11,16 @@
     padding: 5px 5px 0px 5px;
 }
 
-.input:focus {
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.input, .inputNumber:focus {
     outline: none;
     border: none;
     box-shadow: 1px 2px 4px 2px lightgray;
