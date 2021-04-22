@@ -13,8 +13,7 @@ module.exports.address = (req, res) => {
     const address = req.body;
 
     findUser(_id).then((user) => {
-
-        updateUser(_id, user, address)
+        updateUser(_id, user, address);
     })
 
 }

@@ -16,6 +16,7 @@ const Address = () => {
     return (
         <div>
             <AddressForm />
+            <hr />
         </div>
     )
 }

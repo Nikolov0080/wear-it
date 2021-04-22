@@ -1,0 +1,17 @@
+.addAddress{
+    font-size: medium;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: rgb(54, 186, 238);
+    width: 36%;
+    margin: auto;
+    cursor: pointer;
+    transition: 0.6s;
+    transition-timing-function: ease-in-out;
+}
+
+.addAddress:hover{
+    color: #fff;
+    border-radius: 30px;
+    background-color: rgb(83, 143, 233);
+}

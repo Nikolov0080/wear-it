@@ -8,8 +8,10 @@ export default function addressValidator(addressLine, city, postalCode) {
     } else if (addressLine.length < 12 || 50 <= addressLine.length) {
         return 'address line must be 12 to 50 symbols long';
     } else if (city.length < 2 || 46 <= city.length) {
-        return 'Username must be 2 to 46 symbols long';
+        return 'City must be 2 to 46 symbols long';
     } else if (postalCode.length < 4 || 8 <= postalCode.length) {
-        return 'Username must be 4 to 8 symbols long';
+        return 'Post Code must be 4 to 8 symbols long';
+    }else{
+        return false;
     }
 }
