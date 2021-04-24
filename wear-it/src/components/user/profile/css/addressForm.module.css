@@ -1,4 +1,4 @@
-.addAddress{
+.addAddress {
     font-size: medium;
     font-weight: 600;
     text-transform: uppercase;
@@ -10,8 +10,28 @@
     transition-timing-function: ease-in-out;
 }
 
-.addAddress:hover{
+.addAddress:hover {
     color: #fff;
     border-radius: 30px;
     background-color: rgb(83, 143, 233);
+}
+
+.cancel {
+    font-size: medium;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: rgb(245, 154, 127);
+    width: 36%;
+    margin: auto;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: 0.6s;
+    transition-timing-function: ease-in-out;
+}
+
+
+.cancel:hover {
+    color: #fff;
+    border-radius: 30px;
+    background-color: rgb(233, 100, 83);
 }

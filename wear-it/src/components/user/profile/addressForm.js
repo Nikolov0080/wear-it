@@ -3,8 +3,10 @@ import Input from '../input/input';
 import ErrMessage from '../../common/errMessage/errMessage';
 import addressValidator from '../../../validations/user/addressValidator';
 import updateAddress from '../../../controllers/user/address';
+import pureToken from '../../../utils/pureToken';
 import style from './css/addressForm.module.css';
-const AddressForm = () => {
+
+const AddressForm = ({ hide }) => {
 
     const [addressLine, setAddressLine] = useState('');
     const [city, setCity] = useState('');
@@ -20,26 +22,27 @@ const AddressForm = () => {
 
     const error = addressValidator(addressLine, city, postalCode)
 
-    const updateAddress = () => {
+    const submit = () => {
         error ? setErr(error) : setErr(false);
 
         if (err === false) {
-            updateAddress(address).then(
-                console.log
-            )
+            pureToken().then((token) => {
+                updateAddress(address, token).then((resp) => {
+                    console.log(resp);
+                    hide(false)
+                }
+                )
+            })
         }
-
     }
 
     const check = () => {
-
         err ? setErr(error) : setErr(false)
-
     }
 
     return (
         <div onChange={() => check()}>
-
+            <p>after updating reLog to see the results</p>
             {err ? <ErrMessage err={err} /> : ''}
 
             <Input type="text" foo={setAddressLine}
@@ -55,8 +58,11 @@ const AddressForm = () => {
                 name="postalCode"
                 placeholder="Postal code/ZIP" />
 
-            <div onClick={() => { updateAddress() }} className={style.addAddress}>
+            <div onClick={() => { submit() }} className={style.addAddress}>
                 update address
+            </div>
+            <div onClick={() => { hide(false) }} className={style.cancel}>
+                cancel
             </div>
         </div>
     )

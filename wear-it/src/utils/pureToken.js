@@ -12,7 +12,7 @@ const getTokenData = async () => {
                 .split('; ')
                 .filter(findAuth)[0]
                 .replace('auth=', '');
-        return token;
+        return  token;
     } else {
         return false
     }
