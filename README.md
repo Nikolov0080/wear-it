@@ -31,6 +31,10 @@ This functionality includes **register**,**login** and **logout**.
 User model
 
 - **Product**:  
+ Update address
+ User model
+
+- **Product**:  
 Includes **cart page**(PLP) & **product details page functionality**(PDP)  
 Product model  
 Cart model  
@@ -50,11 +54,11 @@ Delete one
 
 ### **`Models`**  
 
- **User model** | **Product model** | **Order model** | **Completed order model**
-|-------------- | ------------------| --------------- | ------------------------
-|username       | productName       | productName     | productName              
-|email          | price             | price           | price              
-|password       | size              | size            | size             
+ **User model** | **Product model** | **Order model** | **Completed order model** |**Update address** |
+|-------------- | ------------------| --------------- | ------------------------  | ------------- |
+|username       | productName       | productName     | productName               | addressLine  |
+|email          | price             | price           | price                     | city         |
+|password       | size              | size            | size                      | postal code  |
 |-              | product image(URL)| product image   | product image             
 |-              |         -         | creator ID      | creator ID 
 
