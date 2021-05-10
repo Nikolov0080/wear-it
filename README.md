@@ -93,7 +93,7 @@ Delete one
  From here authenticated users can select size and add to cart  
  the current product  
  
- ### **`Pages`**  
+ ### **`Routes`**  
  - Home page - "/"  
  - Login page - "/login"  
  - Register page - "/register"
